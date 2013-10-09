@@ -1,7 +1,8 @@
-/* Brand Colors
-		Dark Blue:  #37464F
-		Light Blue: #00ACED
-		Light Grey: #E3E3E3 */
+/* Brand Colors:
+	Dark Blue:  #37464F
+	Light Grey: #E3E3E3
+	Green:      #6CC644
+	Red:        #B33630 */
 
 
 /*
@@ -34,7 +35,7 @@ a:hover {
 }
 
 html {
-	font: 100%/1.4 "Lato", "Proxima Nova", Arial, sans-serif;
+	font: 100%/1.4 "Proxima Nova", "Lato", sans-serif;
 	color: #222;
 	-webkit-font-smoothing: antialiased;
 }
