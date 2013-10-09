@@ -320,7 +320,6 @@ input[type='text'] {
 .option-bar li {
 	height: 40px;
 	display: inline-block;
-	margin: 0;
 }
 
 .option-bar li .button {
@@ -343,4 +342,36 @@ input[type='text'] {
 	font-size: 2rem;
 	font-weight: normal;
 	line-height: 28px;
+}
+
+/*
+ * Pills *
+         */
+
+.pills {
+	list-style: none;
+}
+
+.pills li {
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.pills li a {
+	display: inline-block;
+	color: #37464F;
+	padding: 5px 7px;
+
+}
+
+.pills li:hover {
+	background-color: #E3E3E3;
+}
+
+.pills li.active {
+	background-color: #37464F;
+}
+
+.pills li.active a {
+	color: #FFF;
 }
