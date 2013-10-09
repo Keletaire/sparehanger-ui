@@ -301,6 +301,11 @@ input[type='text'] {
 	border-color: #DA9797;
 }
 
+.alert .close {
+	float: right;
+	cursor: pointer;
+}
+
 /*
  * Option Bar *
                */

@@ -69,6 +69,9 @@
 					<div class="page-title">
 						<h1>Buttons</h1>
 					</div>
+					<pre><code>
+&lt;a href=&quot;#&quot; class=&quot;dangerous button&quot;&gt;Button Text&lt;/a&gt;
+					</code></pre>
 					<p>
 						Use the standard <code>.button</code> for form actions and primary page actions. They should be used extensively around the site.
 						<h3>When should you use a button?</h3>
@@ -96,6 +99,40 @@
 			</div>
 			<div class="row">
 				<div class="column-100">
+					<div class="page-title">
+						<h1>Alerts</h1>
+					</div>
+					<pre><code>
+&lt;div class=&quot;alert&quot;&gt;
+	&lt;span class=&quot;ss-icon close&quot;&gt;close&lt;/span&gt;
+	&lt;strong&gt;.alert:&lt;/strong&gt; Check this out!
+&lt;/div&gt;
+					</code></pre>
+					<p>
+						Alerts are useful for when you want to let a user know whether something happened or not, and also for letting users know about updates. Alerts will hide themselves when a user closes them.
+						<h3>When should you use an alert?</h3>
+						<ul>
+							<li>There was an error saving something to the database</li>
+							<li>You want to let a user know that something was saved correctly</li>
+							<li>Any time you want a user to read something.</li>
+						</ul>
+					</p>
+					<div class="alert">
+						<span class="ss-icon close">close</span>
+						<strong>.alert:</strong> Check this out!
+					</div>
+					<div class="alert warning">
+						<span class="ss-icon close">close</span>
+						<strong>.alert.warning:</strong> Watch yourself!
+					</div>
+					<div class="alert error">
+						<span class="ss-icon close">close</span>
+						<strong>.alert.error:</strong> Something went wrong!
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column-100">
 					<h3>.option-bar</h3>
 					<ul class="option-bar">
 						<li><a href="" class="button"><i class="ss-icon">eye</i> Brands Followed</a></li>
@@ -105,13 +142,6 @@
 						<li><a href="" class="button"><i class="ss-icon">pencil</i> Edit Brand</a></li>
 						<li><a href="" class="button primary"><i class="ss-icon">compose</i> Add a Product	</a></li>
 					</ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column-100">
-					<div class="page-title">
-						<h1>.page-title</h1>
-					</div>
 				</div>
 			</div>
 			<div class="row main">
@@ -179,7 +209,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="column-50">
+				<div class="column-100">
 					<div class="boxed-group">
 						<h2>.boxed-group</h2>
 						<div class="boxed-group-inner">
@@ -187,21 +217,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="column-50">
-					<div class="alert">
-						<strong>.alert:</strong> Check this out!
-					</div>
-					<div class="alert warning">
-						<strong>.alert.warning:</strong> Watch yourself!
-					</div>
-					<div class="alert error">
-						<strong>.alert.error:</strong> Something went wrong!
-					</div>
-				</div>
 			</div>
 		</div>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="app.js"></script>
 		<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+		<script>
+			$(function() {
+				hljs.initHighlightingOnLoad();
+				hljs.tabReplace = '    ';
+			});
+		</script>
 	</body>
 </html>

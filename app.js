@@ -7,7 +7,7 @@ App = function() {
 			"width":     optionWidth - 0.28 + "%",
 			"font-size": (-1/150 * Math.pow(options.length - 1, 2) + 1) + "rem"
 		});
-	};
+	}
 
 	this.setHoverView = function() {
 		$('.hover-view').hover(function() {
@@ -19,12 +19,22 @@ App = function() {
 			$(this).children('.hover-content').css({opacity: 0});
 			$(this).children('.hover-tools').css({opacity: 0});
 		});
-	};
+	}
 
-	hljs.initHighlightingOnLoad();
-	hljs.tabReplace = '    ';
-	this.setOptionBar();
-	this.setHoverView();
+	this.setAlertClose = function() {
+		$('.alert .close').click(function() {
+			$(this).parents('.alert').hide();
+		});
+	}
+
+	this.go = function() {
+		this.setOptionBar();
+		this.setHoverView();
+		this.setAlertClose();
+	}
 };
 
-$(function() { var app = new App() });
+$(function() {
+	var app = new App();
+	app.go();
+});
