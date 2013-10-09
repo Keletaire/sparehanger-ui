@@ -69,10 +69,7 @@ h4 {
 	line-height: 1.7;
 }
 
-.ss-icon {
-	vertical-align: middle;
-}
-
+.ss-icon { vertical-align: middle; }
 .red   { color: #B33630; }
 .green { color: #6CC644; }
 .dark  { color: #37464F; }
@@ -215,6 +212,7 @@ input[type='text'] {
 }
 
 .hover-content {
+	color: #222;
 	opacity: 0;
 	position: absolute;
 	top: 0;
@@ -233,6 +231,7 @@ input[type='text'] {
 }
 
 .hover-tools {
+	color: #222;
 	opacity: 0;
 	position: absolute;
 	top: 85%;
@@ -251,7 +250,10 @@ input[type='text'] {
 .hover-view .count {
 	font-size: .75rem;
 	color: #555;
+	margin-left: 2px;
 }
+
+.hover-tools a { color: #333; }
 
 /*
  * Boxed Groups  *
@@ -314,6 +316,10 @@ input[type='text'] {
 	height: 40px;
 	display: inline-block;
 	margin: 0;
+}
+
+.option-bar li .button {
+	width: 100%;
 }
 
 /*
