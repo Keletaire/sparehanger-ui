@@ -15,3 +15,7 @@ body {
 [class*="column-"] > p {
 	width: 65%;
 }
+
+ul:not(.option-bar) {
+	margin-left: 30px;
+}
