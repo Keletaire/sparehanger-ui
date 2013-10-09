@@ -256,22 +256,22 @@ input[type='text'] {
 .hover-tools a { color: #333; }
 
 /*
- * Boxed Groups  *
-                 */
+ * Boxes  *
+          */
 
-.boxed-group {
+.box {
 	border: 1px solid #ddd;
 	border-radius: 3px;
 }
 
-.boxed-group h2 {
+.box h2 {
 	padding: 10px;
 	border-bottom: 1px solid #ddd;
 	background: #eee;
 	font-size: 1.2rem;
 }
 
-.boxed-group .boxed-group-inner {
+.box .box-inner {
 	padding: 10px;
 }
 
