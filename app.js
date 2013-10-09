@@ -1,12 +1,13 @@
 
 App = function() {
 	this.go = function() {
-		this.setOptionBar();
-		this.setHoverView();
-		this.setAlertClose();
+		this.primeOptionBar();
+		this.primeHoverView();
+		this.primeAlertClose();
+		this.primeDropdown();
 	}
 
-	this.setOptionBar = function() {
+	this.primeOptionBar = function() {
 		var options = $('.option-bar li');
 		var optionWidth = 100 / options.length
 		// font size is defined by a parabola with vertex (1, 1) downward sloping
@@ -16,7 +17,7 @@ App = function() {
 		});
 	}
 
-	this.setHoverView = function() {
+	this.primeHoverView = function() {
 		var views = $('.hover-view');
 		views.hover(function() {
 			$(this).children('.hover-img').css({opacity: 0});
@@ -29,14 +30,26 @@ App = function() {
 		});
 	}
 
-	this.setAlertClose = function() {
+	this.primeAlertClose = function() {
 		$('.alert .close').click(function() {
 			$(this).parents('.alert').hide();
 		});
+	}
+
+	this.primeDropdown = function() {
+		var anyClick = $('h2').click(function() {
+			// a click has happened, anywhere
+		});
+		$('.dropdown-toggle').click(function() {
+			var parent = $(this).parent();
+			$('.dropdown-list', parent).show();
+		});
+
+
 	}
 };
 
 $(function() {
 	app = new App();
 	app.go();
-});
+}); 

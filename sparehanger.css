@@ -375,3 +375,46 @@ input[type='text'] {
 .pills li.active a {
 	color: #FFF;
 }
+
+/*
+ * Dropdown *
+            */
+
+.dropdown .dropdown-toggle {
+
+}
+
+.dropdown .dropdown-list {
+	margin-left: 5px;
+	list-style: none;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	padding: 9px 0;
+	min-width: 160px;
+	z-index: 1000;
+	border-radius: 3px;
+	position: absolute;
+	top: 100%;
+	background: #FFF;
+	display: none;
+}
+
+.dropdown .dropdown-list li {
+	border-top: 1px solid #eee;
+}
+
+.dropdown .dropdown-list li:hover {
+	background: #37464F;
+	color: #FFF;
+}
+
+.dropdown .dropdown-list li:first-child {
+	border-top: 0;
+}
+
+.dropdown .dropdown-list li a {
+	display: block;
+	padding: 3px 20px;
+	color: inherit;
+}
