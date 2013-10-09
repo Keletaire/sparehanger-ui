@@ -1,0 +1,12 @@
+.site-header {
+	height: 40px;
+	border-bottom: 1px solid #eee;
+}
+
+.alert {
+	margin: 5px;
+}
+
+body {
+	margin-bottom: 50px;
+}
