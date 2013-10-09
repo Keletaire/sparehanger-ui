@@ -1,4 +1,11 @@
+
 App = function() {
+	this.go = function() {
+		this.setOptionBar();
+		this.setHoverView();
+		this.setAlertClose();
+	}
+
 	this.setOptionBar = function() {
 		var options = $('.option-bar li');
 		var optionWidth = 100 / options.length
@@ -10,7 +17,8 @@ App = function() {
 	}
 
 	this.setHoverView = function() {
-		$('.hover-view').hover(function() {
+		var views = $('.hover-view');
+		views.hover(function() {
 			$(this).children('.hover-img').css({opacity: 0});
 			$(this).children('.hover-content').css({opacity: 1});
 			$(this).children('.hover-tools').css({opacity: 1});
@@ -26,15 +34,9 @@ App = function() {
 			$(this).parents('.alert').hide();
 		});
 	}
-
-	this.go = function() {
-		this.setOptionBar();
-		this.setHoverView();
-		this.setAlertClose();
-	}
 };
 
 $(function() {
-	var app = new App();
+	app = new App();
 	app.go();
 });
