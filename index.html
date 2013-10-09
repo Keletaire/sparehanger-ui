@@ -199,15 +199,12 @@
 					<p>
 						Note that in order for a hover view to display correctly, its width and height must be the same as the width and height of the image.
 					</p>
-					<p>
-						Hover views have an area at the bottom for actions on that object (i.e. favoriting, adding to closet, editing, etc.).
-					</p>
 					<h3>When should you use a hover view?</h3>
-						<ul>
-							<li>General object display</li>
-							<li>Isotope-enabled layouts</li>
-							<li>Any time you want a visual look without much textual information.</li>
-						</ul>
+					<ul>
+						<li>General object display</li>
+						<li>Isotope-enabled layouts</li>
+						<li>Any time you want a visual look without much textual information.</li>
+					</ul>
 					<div class="hover-view" style="width: 200px; height: 200px">
 						<a href="" class="hover-img">
 							<img src="http://placehold.it/200x200">
@@ -272,15 +269,39 @@
 			</div>
 			<div class="row">
 				<div class="column-100">
-					<h3>.option-bar</h3>
-					<ul class="option-bar">
-						<li><a href="" class="button"><i class="ss-icon">eye</i> Brands Followed</a></li>
-						<li><a href="" class="button"><i class="ss-icon">key</i> Manage Brands</a></li>
-						<li><a href="" class="button"><i class="ss-icon">plus</i> Create Brand</a></li>
-						<li><a href="" class="button dangerous"><i class="ss-icon">delete</i> Delete Brand</a></li>
-						<li><a href="" class="button"><i class="ss-icon">pencil</i> Edit Brand</a></li>
-						<li><a href="" class="button primary"><i class="ss-icon">compose</i> Add a Product	</a></li>
-					</ul>
+					<div class="page-title">
+						<h1>Navigation</h1>
+					</div>
+					<div>
+						<h2>Option Bar</h2>
+						<pre><code>
+	&lt;ul class=&quot;option-bar&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;eye&lt;/i&gt; Brands Followed&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;key&lt;/i&gt; Manage Brands&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;plus&lt;/i&gt; Create Brand&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;&quot; class=&quot;dangerous button&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;delete&lt;/i&gt; Delete Brand&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+						</code></pre>
+						<p>
+							Option bars provide a way to present a user with multiple relevant choices to click based on the page they are currently on. Option bars should <em>not</em> be used for site-wide navigation, but for links to relevant pages. Options take any of the available button classes.
+							<h3>When should you use an option bar?</h3>
+							<ul>
+								<li>The top of a page to manage brands</li>
+								<li>Linking to different parts of a profile</li>
+								<li>Any time you want a way to display relevant links to the page you're on.</li>
+							</ul>
+						</p>
+						<br>
+						<ul class="option-bar">
+							<li><a href="" class="button"><i class="ss-icon">eye</i> Brands Followed</a></li>
+							<li><a href="" class="button"><i class="ss-icon">key</i> Manage Brands</a></li>
+							<li><a href="" class="button"><i class="ss-icon">plus</i> Create Brand</a></li>
+							<li><a href="" class="dangerous button"><i class="ss-icon">delete</i> Delete Brand</a></li>
+							<li><a href="" class="button"><i class="ss-icon">pencil</i> Edit Brand</a></li>
+							<li><a href="" class="primary button"><i class="ss-icon">compose</i> Add a Product	</a></li>
+						</ul>
+						<br>
+					</div>
 				</div>
 			</div>
 		</div>
