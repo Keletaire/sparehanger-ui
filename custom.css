@@ -5,7 +5,10 @@ body {
 .site-header {
 	height: 60px;
 	border-bottom: 1px solid #eee;
+}
 
+.site-header a {
+	color: inherit;
 }
 
 .alert {
