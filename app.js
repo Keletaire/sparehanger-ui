@@ -21,6 +21,8 @@ App = function() {
 		});
 	};
 
+	hljs.initHighlightingOnLoad();
+	hljs.tabReplace = '    ';
 	this.setOptionBar();
 	this.setHoverView();
 };
