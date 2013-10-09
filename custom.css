@@ -21,3 +21,11 @@ ul:not(.option-bar) {
 }
 
 .box { margin: 5px; }
+
+.color-bubble {
+	height: 100px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	width: 70%;
+	padding: 20px;
+}
