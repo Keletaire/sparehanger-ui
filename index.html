@@ -22,25 +22,46 @@
 					<p>
 						Spare Hanger uses a grid system based on percentages. For instance, a block-level element such as
 					</p>
-					<pre><code>
-&lt;div class=&quot;column-100&quot;&gt;
-					</code></pre>
+					<pre><code>&lt;div class=&quot;column-100&quot;&gt;</code></pre>
 					<p>
 						would cover 100% of the width of its parent element. Typical usage of the grid system might look like this:
 					</p>
 					<pre><code>
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;column-30&quot;&gt;
-		This is a column
+		This is a column that is 30% of the width
 	&lt;/div&gt;
 	&lt;div class=&quot;column-70&quot;&gt;
-		This is a larger column
+		This is a larger column this is 70% of the width
 	&lt;/div&gt;
 &lt;/div&gt;
 					</code></pre>
+					<p>Note that</p>
+					<pre><code>&lt;div class=&quot;row&quot;&gt;</code></pre>
+					<p>is required and that the percentages in a <code>.row</code> must add up to 100%.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column-100">
+					<div class="page-title">
+						<h1>Text Styles</h1>
+					</div>
 					<p>
-						Note that <pre><code>&lt;div class=&quot;row&quot;&gt;</code></pre> is required.
+						Body text is set to a specific percentage of the page width. From there, all text sizes are measured in <a href="http://snook.ca/archives/html_and_css/font-size-with-rem"><code>rem</code></a>.
 					</p>
+					<p>
+						<h1>Heading One</h1>
+						<h2>Heading Two</h2>
+						<h3>Heading Three</h3>
+						<h4>Heading Four</h4>
+					</p>
+					<p>
+						You can color any text with the following classes:
+					</p>
+					<p><strong class="red">.red</strong></p>
+					<p><strong class="dark">.dark</strong></p>
+					<p><strong class="green">.green</strong></p>
+					<p><strong class="grey">.grey</strong></p>
 				</div>
 			</div>
 			<div class="row">

@@ -3,8 +3,9 @@ body {
 }
 
 .site-header {
-	height: 40px;
+	height: 60px;
 	border-bottom: 1px solid #eee;
+
 }
 
 .alert {

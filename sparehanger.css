@@ -6,8 +6,8 @@
 
 
 /*
- * Basics *
-          */
+ * Reset & Misc. *
+                 */
 
 * {
 	margin: 0;
@@ -18,24 +18,6 @@
 	        box-sizing: border-box;
 }
 
-a {
-	color: inherit;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
-.ss-icon {
-	vertical-align: middle;
-}
-
-h3 {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
 .wrap {
 	max-width: 960px;
 	margin: 0 auto;
@@ -43,12 +25,58 @@ h3 {
 	padding: 0 1.4rem;
 }
 
+/*
+ * Text Styling *
+                */
+
 html {
 	font: 100%/1.4 "Proxima Nova", "Lato", sans-serif;
-	color: #222;
+	color: #333;
 	-webkit-font-smoothing: antialiased;
 }
 
+p {
+	padding: 4px 0;
+}
+
+a {
+	color: #4183C4;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 1.8rem;
+	line-height: 1.7;
+}
+
+h2 {
+	font-size: 1.5rem;
+	line-height: 1.7;
+}
+
+
+h3 {
+	font-size: 1.3rem;
+	line-height: 1.7;
+}
+
+h4 {
+	font-size: 1.1rem;
+	line-height: 1.7;
+}
+
+.ss-icon {
+	vertical-align: middle;
+}
+
+.red   { color: #B33630; }
+.green { color: #6CC644; }
+.dark  { color: #37464F; }
+.grey  { color: #999; }
 
 /*
  * Grid *
