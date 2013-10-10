@@ -1,6 +1,7 @@
 
 App = function() {
 	this.go = function() {
+		this.initializeGrid();
 		this.primeOptionBar();
 		this.primeHoverView();
 		this.primeAlertClose();
@@ -44,8 +45,13 @@ App = function() {
 			var parent = $(this).parent();
 			$('.dropdown-list', parent).show();
 		});
+	}
 
-
+	this.initializeGrid = function() {
+		$("[class*='column-']").each(function() {
+			var percent = $(this).attr('class').match(/\d+/g);
+			$(this).css('width', percent + "%");
+		});
 	}
 };
 

@@ -19,7 +19,7 @@ body {
 	width: 65%;
 }
 
-ul:not(.option-bar, .dropdown-list) {
+ul:not(.option-bar) {
 	margin-left: 30px;
 }
 

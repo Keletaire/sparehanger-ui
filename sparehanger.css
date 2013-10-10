@@ -88,20 +88,7 @@ h4 {
 
 .row:after { clear: both; }
 [class*='column-'] { display: inline-block; float: left; }
-[class*='column-'].center { margin: 0 auto; }
-
-.row .column-10  { width: 10%; }
-.row .column-20  { width: 20%; }
-.row .column-30  { width: 30%; }
-.row .column-40  { width: 40%; }
-.row .column-50  { width: 50%; }
-.row .column-60  { width: 60%; }
-.row .column-70  { width: 70%; }
-.row .column-80  { width: 80%; }
-.row .column-90  { width: 90%; }
-.row .column-100 { width: 100%; }
-
-
+.center { margin: 0 auto; }
 .pull-right { float: right; }
 
 /*
