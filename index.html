@@ -91,18 +91,6 @@
 					<div class="page-title">
 						<h1>Buttons</h1>
 					</div>
-					<pre><code>
-&lt;a href=&quot;#&quot; class=&quot;dangerous button&quot;&gt;Button Text&lt;/a&gt;
-					</code></pre>
-					<p>
-						Use the standard <code>.button</code> for form actions and primary page actions. They should be used extensively around the site.
-						<h4>When should you use a button?</h4>
-						<ul>
-							<li>Form actions (<em>Sign In</em>, <em>Create Item</em>)</li>
-							<li>Primary page actions (<em>Add Friend</em>, <em>Message</em>)</li>
-							<li>Any time you want the user to click something.</li>
-						</ul>
-					</p>
 					<p>
 						<h4>Normal Buttons</h4>
 						<a href="" class="button">.button</a> 
@@ -116,6 +104,18 @@
 						<a href="" class="button primary small">.small.primary.button</a> 
 						<a href="" class="button dark small">.small.dark.button</a> 
 						<a href="" class="button dangerous small">.small.dangerous.button</a>
+					</p>
+					<pre><code>
+&lt;a href=&quot;#&quot; class=&quot;dangerous button&quot;&gt;Button Text&lt;/a&gt;
+					</code></pre>
+					<p>
+						Use the standard <code>.button</code> for form actions and primary page actions. They should be used extensively around the site.
+						<h4>When should you use a button?</h4>
+						<ul>
+							<li>Form actions (<em>Sign In</em>, <em>Create Item</em>)</li>
+							<li>Primary page actions (<em>Add Friend</em>, <em>Message</em>)</li>
+							<li>Any time you want the user to click something.</li>
+						</ul>
 					</p>
 				</div>
 			</div>
@@ -134,6 +134,18 @@
 					<div class="page-title">
 						<h1>Alerts</h1>
 					</div>
+					<div class="alert">
+						<span class="ss-icon close">close</span>
+						<strong>.alert:</strong> Check this out!
+					</div>
+					<div class="alert warning">
+						<span class="ss-icon close">close</span>
+						<strong>.alert.warning:</strong> Watch yourself!
+					</div>
+					<div class="alert error">
+						<span class="ss-icon close">close</span>
+						<strong>.alert.error:</strong> Something went wrong!
+					</div>
 					<pre><code>
 &lt;div class=&quot;alert&quot;&gt;
 	&lt;span class=&quot;ss-icon close&quot;&gt;close&lt;/span&gt;
@@ -149,18 +161,6 @@
 							<li>Any time you want a user to read something.</li>
 						</ul>
 					</p>
-					<div class="alert">
-						<span class="ss-icon close">close</span>
-						<strong>.alert:</strong> Check this out!
-					</div>
-					<div class="alert warning">
-						<span class="ss-icon close">close</span>
-						<strong>.alert.warning:</strong> Watch yourself!
-					</div>
-					<div class="alert error">
-						<span class="ss-icon close">close</span>
-						<strong>.alert.error:</strong> Something went wrong!
-					</div>
 				</div>
 			</div>
 			<div class="row">
@@ -168,23 +168,6 @@
 					<div class="page-title">
 						<h1>Boxes</h1>
 					</div>
-					<pre><code>
-&lt;div class=&quot;box&quot;&gt;
-	&lt;h2&gt;Box Heading&lt;/h2&gt;
-	&lt;div class=&quot;box-inner&quot;&gt;
-		&lt;p&gt;Lorem ipsum dolor sit amet..&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-					</code></pre>
-					<p>
-						Boxes provide a way to display information that is seperate from the content around it. The header should be descriptive, but brief.
-						<h4>When should you use a box?</h4>
-						<ul>
-							<li>Admin panels</li>
-							<li>Settings pages</li>
-							<li>Any time your information is seperate from the content around it.</li>
-						</ul>
-					</p>
 					<div class="row">
 						<div class="box column-40">
 							<h2>Box Heading</h2>
@@ -203,6 +186,23 @@
 							</div>
 						</div>
 					</div>
+					<pre><code>
+&lt;div class=&quot;box&quot;&gt;
+	&lt;h2&gt;Box Heading&lt;/h2&gt;
+	&lt;div class=&quot;box-inner&quot;&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet..&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+					</code></pre>
+					<p>
+						Boxes provide a way to display information that is seperate from the content around it. The header should be descriptive, but brief.
+						<h4>When should you use a box?</h4>
+						<ul>
+							<li>Admin panels</li>
+							<li>Settings pages</li>
+							<li>Any time your information is seperate from the content around it.</li>
+						</ul>
+					</p>
 				</div>
 			</div>
 			<div class="row">
@@ -210,33 +210,6 @@
 					<div class="page-title">
 						<h1>Hover Views</h1>
 					</div>
-					<pre><code>
-&lt;div class=&quot;hover-view&quot; style=&quot;width: 200px; height: 200px&quot;&gt;
-	&lt;a href=&quot;&quot; class=&quot;hover-img&quot;&gt;
-		&lt;img src=&quot;#&quot;&gt;
-	&lt;/a&gt;
-	&lt;a href=&quot;&quot; class=&quot;hover-content&quot;&gt;
-		&lt;h4&gt;Object Name&lt;/h4&gt;
-		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
-	&lt;/a&gt;
-	&lt;div class=&quot;hover-tools&quot;&gt;
-		&lt;a href=&quot;&quot; class=&quot;ss-icon&quot;&gt;plus&lt;/a&gt;&lt;span class=&quot;count&quot;&gt;10&lt;/span&gt; 
-		&lt;a href=&quot;&quot; class=&quot;ss-icon&quot;&gt;heart&lt;/a&gt;&lt;span class=&quot;count&quot;&gt;45&lt;/span&gt; 
-	&lt;/div&gt;
-&lt;/div&gt;
-					</code></pre>
-					<p>
-						Hover views are the main way that content gets displayed on Spare Hanger. An image is displayed which, when hovered over, reveals information about the object. Hover views work perfectly with <a href="http://isotope.metafizzy.co/">Isotope</a>.
-					</p>
-					<p>
-						Note that in order for a hover view to display correctly, its width and height must be the same as the width and height of the image.
-					</p>
-					<h4>When should you use a hover view?</h4>
-					<ul>
-						<li>General object display</li>
-						<li>Isotope-enabled layouts</li>
-						<li>Any time you want a visual look without much textual information.</li>
-					</ul>
 					<div class="hover-view" style="width: 200px; height: 200px">
 						<a href="" class="hover-img">
 							<img src="http://placehold.it/200x200">
@@ -297,6 +270,33 @@
 							<a href="" class="ss-icon">heart</a><span class="count">45</span> 
 						</div>
 					</div>
+					<pre><code>
+&lt;div class=&quot;hover-view&quot; style=&quot;width: 200px; height: 200px&quot;&gt;
+	&lt;a href=&quot;&quot; class=&quot;hover-img&quot;&gt;
+		&lt;img src=&quot;#&quot;&gt;
+	&lt;/a&gt;
+	&lt;a href=&quot;&quot; class=&quot;hover-content&quot;&gt;
+		&lt;h4&gt;Object Name&lt;/h4&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+	&lt;/a&gt;
+	&lt;div class=&quot;hover-tools&quot;&gt;
+		&lt;a href=&quot;&quot; class=&quot;ss-icon&quot;&gt;plus&lt;/a&gt;&lt;span class=&quot;count&quot;&gt;10&lt;/span&gt; 
+		&lt;a href=&quot;&quot; class=&quot;ss-icon&quot;&gt;heart&lt;/a&gt;&lt;span class=&quot;count&quot;&gt;45&lt;/span&gt; 
+	&lt;/div&gt;
+&lt;/div&gt;
+					</code></pre>
+					<p>
+						Hover views are the main way that content gets displayed on Spare Hanger. An image is displayed which, when hovered over, reveals information about the object. Hover views work perfectly with <a href="http://isotope.metafizzy.co/">Isotope</a>.
+					</p>
+					<p>
+						Note that in order for a hover view to display correctly, its width and height must be the same as the width and height of the image.
+					</p>
+					<h4>When should you use a hover view?</h4>
+					<ul>
+						<li>General object display</li>
+						<li>Isotope-enabled layouts</li>
+						<li>Any time you want a visual look without much textual information.</li>
+					</ul>
 				</div>
 			</div>
 			<div class="row">
@@ -306,6 +306,15 @@
 					</div>
 					<div>
 						<h2>Option Bars</h2>
+						<br>
+						<ul class="option-bar">
+							<li><a href="" class="button"><i class="ss-icon">eye</i> Brands Followed</a></li>
+							<li><a href="" class="button"><i class="ss-icon">key</i> Manage Brands</a></li>
+							<li><a href="" class="button"><i class="ss-icon">plus</i> Create Brand</a></li>
+							<li><a href="" class="dangerous button"><i class="ss-icon">delete</i> Delete Brand</a></li>
+							<li><a href="" class="button"><i class="ss-icon">pencil</i> Edit Brand</a></li>
+							<li><a href="" class="primary button"><i class="ss-icon">compose</i> Add a Product	</a></li>
+						</ul>
 						<pre><code>
 	&lt;ul class=&quot;option-bar&quot;&gt;
 		&lt;li&gt;&lt;a href=&quot;&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;eye&lt;/i&gt; Brands Followed&lt;/a&gt;&lt;/li&gt;
@@ -326,19 +335,19 @@
 								<li>Any time you want a way to display relevant links to the page you're on.</li>
 							</ul>
 						</p>
-						<br>
-						<ul class="option-bar">
-							<li><a href="" class="button"><i class="ss-icon">eye</i> Brands Followed</a></li>
-							<li><a href="" class="button"><i class="ss-icon">key</i> Manage Brands</a></li>
-							<li><a href="" class="button"><i class="ss-icon">plus</i> Create Brand</a></li>
-							<li><a href="" class="dangerous button"><i class="ss-icon">delete</i> Delete Brand</a></li>
-							<li><a href="" class="button"><i class="ss-icon">pencil</i> Edit Brand</a></li>
-							<li><a href="" class="primary button"><i class="ss-icon">compose</i> Add a Product	</a></li>
-						</ul>
-						<br>
 					</div>
 					<div>
 						<h2>Dropdowns</h2>
+						<br>
+						<div class="dropdown">
+							<a class="dropdown-toggle button">Privacy <i class="ss-icon" style="font-size: .8rem"> dropdown</i></a>
+							<ul class="dropdown-list">
+								<li><a href="">Item One</a></li>
+								<li><a href="">Item Two</a></li>
+								<li><a href="">Item Three</a></li>
+								<li><a href="">Item Four</a></li>
+							</ul>
+						</div>
 						<pre><code>
 &lt;div class=&quot;dropdown&quot;&gt;
 	&lt;a class=&quot;dropdown-toggle button&quot;&gt;Privacy &lt;i class=&quot;ss-icon&quot;&gt; dropdown&lt;/i&gt;&lt;/a&gt;
@@ -361,19 +370,16 @@
 								<li>Any time you want to let a user choose between different options.</li>
 							</ul>
 						</p>
-						<div class="dropdown">
-							<a class="dropdown-toggle button">Privacy <i class="ss-icon" style="font-size: .8rem"> dropdown</i></a>
-							<ul class="dropdown-list">
-								<li><a href="">Item One</a></li>
-								<li><a href="">Item Two</a></li>
-								<li><a href="">Item Three</a></li>
-								<li><a href="">Item Four</a></li>
-							</ul>
-						</div>
 					</div>
-					<br>
 					<div>
 						<h2>Pills</h2>
+						<br>
+						<ul class="pills">
+							<li class="active"><a href="">Items</a></li>
+							<li><a href="">Outfits</a></li>
+							<li><a href="">Brands</a></li>
+						</ul>
+						<br>
 						<pre><code>
 &lt;ul class=&quot;pills&quot;&gt;
 	&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;&quot;&gt;Items&lt;/a&gt;&lt;/li&gt;
@@ -392,11 +398,33 @@
 								<li>Any time you want to allow the user to switch the context of the page they're on.</li>
 							</ul>
 						</p>
-						<ul class="pills">
-							<li class="active"><a href="">Items</a></li>
-							<li><a href="">Outfits</a></li>
-							<li><a href="">Brands</a></li>
-						</ul>
+					</div>
+					<div>
+						<h2>Navbar</h2>
+						<br>
+						<div class="navbar">
+							<div class="navbar-left">
+								<input class="navbar-search" type="text" placeholder="Search..">
+							</div>
+							<div class="navbar-center">
+								<h1>spare hanger</h1>
+							</div>
+							<div class="navbar-right">
+								<ul class="navbar-options">
+									<li><a href="">username</a></li>
+									<li>
+										<div class="dropdown">
+											<a class="dropdown-toggle"><i class="ss-icon">gear</i></a>
+											<ul class="dropdown-list">
+												<li><a href="">Item One</a></li>
+												<li><a href="">Item Two</a></li>
+												<li><a href="">Item Three</a></li>
+												<li><a href="">Item Four</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
 					</div>
 				</div>
 			</div>
