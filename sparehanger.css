@@ -195,7 +195,7 @@ input[type='text'] {
 
 .hover-img {
 	opacity: 1;
-	-webkit-transition: opacity .1s linear;
+	-webkit-transition: opacity .05s linear;
 }
 
 .hover-content {
