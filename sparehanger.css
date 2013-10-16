@@ -95,7 +95,7 @@ h4 {
  * Buttons *
            */
 
-.button {
+button, .button {
 	display: inline-block;
 	padding: 7px 15px;
 	border: 1px solid #DDD;
@@ -104,7 +104,6 @@ h4 {
 	background-color: #E3E3E3;
 	background-repeat: repeat-x;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-	color: #FFF;
 	color: #222;
 	vertical-align: middle;
 	text-align: center;
@@ -113,65 +112,66 @@ h4 {
 	-webkit-appearance: none;
 }
 
-.button:hover {
+button:hover, .button:hover {
 	border-color: #CCC #CCC #B5B5B5;
 	background-color: #DADADA;
 }
 
-.button:active {
+button:active, .button:active {
 	border-color: #B5B5B5;
 	background-color: #DADADA;
 	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.15);
 }
 
-.button.primary {
+button.primary, .button.primary {
 	border-color: #5CA941;
 	background-color: #6CC644;
 	color: #FFF;
 }
 
-.button.primary:hover {
+button.primary:hover, .button.primary:hover {
 	border-color: #4A993E;
 	background-color: #569E3D;
 }
 
-.button.primary:active {
+button.primary:active, .button.primary:active {
 	border-color: #418737;
 	background-color: #569E3D;
 }
 
-.button.dangerous {
+button.dangerous, .button.dangerous {
 	color: #B33630;
 }
 
-.button.dangerous:hover {
+button.dangerous:hover, .button.dangerous:hover {
 	border-color: #9F312C;
 	background-color: #B33630;
 	color: #FFF;
 }
 
-.button.dark {
+button.dark, .button.dark {
 	border-color: #2C3840;
 	background-color: #37464F;
 	color: #FFF;
 }
 
-.button.dark:hover {
+button.dark:hover, .button.dark:hover {
 	border-color: #333;
 	background-color: #2C3840;
 }
 
-.button.small {
+button.small, .button.small {
 	padding: 4px 6px;
 	border-radius: 2px;
 	font-size: .7rem;
+	font-weight: bold;
 }
 
 /*
- * Forms *
-         */
+ * Form Elements *
+                 */
 
-input[type='text'] {
+input[type='text'], input[type='url'], input[type='email'] {
 	box-sizing: border-box;
 	padding: 4px;
 	min-height: 34px;
@@ -182,6 +182,61 @@ input[type='text'] {
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
 	font-weight: 100;
 	font-size: 13px;
+}
+
+/*
+ * Album Uploader *
+                  */
+
+.album-uploader {
+	min-height: 200px;
+	padding: 10px;
+}
+
+.album-uploader .upload-area {
+	display: inline-block;
+	float: left;
+	width: 30%;
+	padding: 10px;
+}
+
+.album-uploader .uploaded-area {
+	display: inline-block;
+	float: left;
+	width: 70%;
+	padding: 10px;
+	border: 1px solid #e3e3e3;
+	overflow: scroll;
+	max-height: 200px;
+	white-space: nowrap;
+}
+
+.album-uploader input[type='file'] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	border: solid rgba(0, 0, 0, 0);
+	border-width: 0 0 .7rem .7rem;
+	opacity: 0;
+	direction: ltr;
+	cursor: pointer;
+}
+
+.album-uploader input[type='url'] {
+	margin-bottom: 5px;
+}
+
+.album-uploader .image-preview {
+	display: inline-block;
+	margin-right: 10px;
+	min-width: 150px;
+	height: 150px;
+}
+
+.album-uploader .image-preview .button {
+	display: block;
+	opacity: 0.8;
 }
 
 /*
