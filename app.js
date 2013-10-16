@@ -9,7 +9,7 @@ App = function() {
 	};
 
 	this.primeImageUploader = function() {
-		$('.image-uploader')
+		// ?
 	};
 
 	this.primeOptionBar = function() {
@@ -18,7 +18,7 @@ App = function() {
 		// font size is defined by a parabola with vertex (1, 1) downward sloping
 		options.css({
 			"width":     optionWidth - 0.28 + "%",
-			"font-size": (-1/150 * Math.pow(options.length - 1, 2) + 1) + "rem"
+			"font-size": (-1/160 * Math.pow(options.length - 1, 2) + 1) + "rem"
 		});
 	};
 
