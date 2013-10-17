@@ -291,6 +291,10 @@ textarea {
 .hover-view {
   display: inline-block;
   margin: 10px; }
+  .hover-view:hover > .hover-content {
+    opacity: 1; }
+  .hover-view:hover > .hover-tools {
+    opacity: 1; }
   .hover-view .hover-img {
     opacity: 1;
     -webkit-transition: opacity .05s linear; }

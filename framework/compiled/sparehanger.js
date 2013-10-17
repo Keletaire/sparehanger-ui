@@ -22,31 +22,6 @@
         "font-size": (-1 / 150 * Math.pow(options.length - 1, 2) + 1) + "rem"
       });
     },
-    primeHoverView: function() {
-      var views;
-      views = $(".hover-view");
-      return views.hover((function() {
-        $(this).children(".hover-img").css({
-          opacity: 0
-        });
-        $(this).children(".hover-content").css({
-          opacity: 1
-        });
-        return $(this).children(".hover-tools").css({
-          opacity: 1
-        });
-      }), function() {
-        $(this).children(".hover-img").css({
-          opacity: 1
-        });
-        $(this).children(".hover-content").css({
-          opacity: 0
-        });
-        return $(this).children(".hover-tools").css({
-          opacity: 0
-        });
-      });
-    },
     primeAlertClose: function() {
       return $(".alert .close").click(function() {
         return $(this).parents(".alert").hide();
@@ -90,7 +65,6 @@
     go: function() {
       this.initializeGrid();
       this.primeOptionBar();
-      this.primeHoverView();
       this.primeIsotope();
       this.primeAlertClose();
       this.primeDropdown();

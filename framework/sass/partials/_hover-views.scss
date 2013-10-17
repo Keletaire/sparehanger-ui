@@ -2,6 +2,14 @@
 	display: inline-block;
 	margin: 10px;
 
+	&:hover > .hover-content {
+		opacity: 1;
+	}
+
+	&:hover > .hover-tools {
+		opacity: 1;
+	}
+
 	.hover-img {
 		opacity: 1;
 		-webkit-transition: opacity .05s linear;
