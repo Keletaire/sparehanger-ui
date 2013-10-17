@@ -109,11 +109,12 @@ button, .button {
 	text-align: center;
 	white-space: nowrap;
 	cursor: pointer;
-	font-size: 1rem;
 	font-family: inherit;
 	font-weight: normal;
 	-webkit-appearance: none;
 }
+
+button { font-size: 1rem; }
 
 button:hover, .button:hover {
 	border-color: #CCC #CCC #B5B5B5;
@@ -226,6 +227,9 @@ select {
 	font-size: 1rem;
 	min-width: 250px;
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
 }
 
 input[type='radio'], input[type='checkbox'] {
@@ -582,6 +586,8 @@ textarea {
 
 .navbar-search {
 	background: rgba(0, 0, 0, 0);
+	outline: none !important;
+	box-shadow: none !important;
 	border: none !important;
 	color: #FFF;
 	font-size: 1rem !important;
