@@ -34,9 +34,11 @@ app = {
     $(document).on 'click', (e) ->
       if $(e.target).hasClass('dropdown-list') or $(e.target).hasClass('dropdown-toggle') or $(e.target).parent().hasClass('dropdown-toggle')
         return
-      dropdown = $('.dropdown-list.active')
-      dropdown.removeClass 'active'
-      dropdown.hide()
+      dropdowns = $('.dropdown-list.active')
+      if dropdowns.length > 0
+        dropdowns.removeClass 'active'
+        dropdowns.hide()
+        console.log "There's a dropdown open"
 
   primePopup: ->
     $('.popup-toggle').click ->
