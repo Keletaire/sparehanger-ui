@@ -1,21 +1,31 @@
 .row { 
 	display: block;
 	margin: 30px 0;
-}
-.row:before,
-.row:after {
-	display: table;
-	content: " ";
-}
 
-.row:after {
-	clear: both;
+	&:before,
+	&:after {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		clear: both;
+	}
 }
 
 [class*='column-'] {
 	display: inline-block;
 	float: left;
+
+	@media screen and (max-width: 640px){
+	    display: block;
+	    float: none;
+	    width: 100% !important;
+	    margin: 10px 0 !important;
+	}
 }
 
 .center { margin: 0 auto; }
 .pull-right { float: right; }
+.inline { display: inline; }
+
