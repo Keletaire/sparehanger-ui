@@ -79,6 +79,17 @@ h4 {
 .grey {
   color: #999; }
 
+.page-title {
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EEE; }
+  .page-title h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 28px; }
+
 .button, button {
   display: inline-block;
   padding: 7px 15px;
