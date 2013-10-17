@@ -50,6 +50,7 @@ app = {
     @primeAlertClose()
     @primeDropdown()
     @primePopup()
+    true
 }
 
 app.go()

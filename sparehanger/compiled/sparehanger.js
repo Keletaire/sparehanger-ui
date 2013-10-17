@@ -69,7 +69,8 @@
       this.primeHoverView();
       this.primeAlertClose();
       this.primeDropdown();
-      return this.primePopup();
+      this.primePopup();
+      return true;
     }
   };
 
