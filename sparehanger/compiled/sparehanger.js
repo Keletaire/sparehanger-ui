@@ -1,60 +1,69 @@
+(function() {
+  var app;
 
-App = function() {
-	this.go = function() {
-		this.initializeGrid();
-		this.primeOptionBar();
-		this.primeHoverView();
-		this.primeAlertClose();
-		this.primeDropdown();
-	};
+  app = {
+    primeOptionBar: function() {
+      var optionWidth, options;
+      options = $(".option-bar li");
+      optionWidth = 100 / options.length;
+      return options.css({
+        width: optionWidth - 0.40 + "%",
+        "font-size": (-1 / 150 * Math.pow(options.length - 1, 2) + 1) + "rem"
+      });
+    },
+    primeHoverView: function() {
+      var views;
+      views = $(".hover-view");
+      return views.hover((function() {
+        $(this).children(".hover-img").css({
+          opacity: 0
+        });
+        $(this).children(".hover-content").css({
+          opacity: 1
+        });
+        return $(this).children(".hover-tools").css({
+          opacity: 1
+        });
+      }), function() {
+        $(this).children(".hover-img").css({
+          opacity: 1
+        });
+        $(this).children(".hover-content").css({
+          opacity: 0
+        });
+        return $(this).children(".hover-tools").css({
+          opacity: 0
+        });
+      });
+    },
+    primeAlertClose: function() {
+      return $(".alert .close").click(function() {
+        return $(this).parents(".alert").hide();
+      });
+    },
+    primeDropdown: function() {
+      return $(".dropdown-toggle").click(function() {
+        var parent;
+        parent = $(this).parent();
+        return $(".dropdown-list", parent).show();
+      });
+    },
+    initializeGrid: function() {
+      return $("[class*='column-']").each(function() {
+        var percent;
+        percent = $(this).attr("class").match(/\d+/g);
+        return $(this).css("width", percent + "%");
+      });
+    },
+    go: function() {
+      this.initializeGrid();
+      this.primeOptionBar();
+      this.primeHoverView();
+      this.primeAlertClose();
+      return this.primeDropdown();
+    }
+  };
 
-	this.primeOptionBar = function() {
-		var options = $('.option-bar li');
-		var optionWidth = 100 / options.length
-		// font size is defined by a parabola with vertex (1, 1) downward sloping
-		options.css({
-			"width":     optionWidth - 0.40 + "%",
-			"font-size": (-1/150 * Math.pow(options.length - 1, 2) + 1) + "rem"
-		});
-	};
+  app.go();
 
-	this.primeHoverView = function() {
-		var views = $('.hover-view');
-		views.hover(function() {
-			$(this).children('.hover-img').css({opacity: 0});
-			$(this).children('.hover-content').css({opacity: 1});
-			$(this).children('.hover-tools').css({opacity: 1});
-		}, function() {
-			$(this).children('.hover-img').css({opacity: 1});
-			$(this).children('.hover-content').css({opacity: 0});
-			$(this).children('.hover-tools').css({opacity: 0});
-		});
-	};
-
-	this.primeAlertClose = function() {
-		$('.alert .close').click(function() {
-			$(this).parents('.alert').hide();
-		});
-	};
-
-	this.primeDropdown = function() {
-		$('.dropdown-toggle').click(function() {
-			var parent = $(this).parent();
-			$('.dropdown-list', parent).show();
-		});
-
-		// TODO: close the menu when the user clicks
-	};
-
-	this.initializeGrid = function() {
-		$("[class*='column-']").each(function() {
-			var percent = $(this).attr('class').match(/\d+/g);
-			$(this).css('width', percent + "%");
-		});
-	};
-};
-
-$(function() {
-	app = new App();
-	app.go();
-}); 
+}).call(this);

@@ -1,12 +1,5 @@
-App = ->
-  @go = ->
-    @initializeGrid()
-    @primeOptionBar()
-    @primeHoverView()
-    @primeAlertClose()
-    @primeDropdown()
-
-  @primeOptionBar = ->
+app = {
+  primeOptionBar: ->
     options = $(".option-bar li")
     optionWidth = 100 / options.length
     
@@ -16,7 +9,7 @@ App = ->
       "font-size": (-1 / 150 * Math.pow(options.length - 1, 2) + 1) + "rem"
 
 
-  @primeHoverView = ->
+  primeHoverView: ->
     views = $(".hover-view")
     views.hover (->
       $(this).children(".hover-img").css opacity: 0
@@ -28,25 +21,28 @@ App = ->
       $(this).children(".hover-tools").css opacity: 0
 
 
-  @primeAlertClose = ->
+  primeAlertClose: ->
     $(".alert .close").click ->
       $(this).parents(".alert").hide()
 
 
-  @primeDropdown = ->
+  primeDropdown: ->
     $(".dropdown-toggle").click ->
       parent = $(this).parent()
       $(".dropdown-list", parent).show()
-      
-      # TODO: close the menu when the user clicks
 
 
-  @initializeGrid = ->
+  initializeGrid: ->
     $("[class*='column-']").each ->
       percent = $(this).attr("class").match(/\d+/g)
       $(this).css "width", percent + "%"
 
+  go: ->
+    @initializeGrid()
+    @primeOptionBar()
+    @primeHoverView()
+    @primeAlertClose()
+    @primeDropdown()
+}
 
-$ ->
-  app = new App()
-  app.go()
+app.go()
