@@ -2,6 +2,7 @@
   var app;
 
   app = {
+    name: "Spare Hanger JS",
     primeOptionBar: function() {
       var optionWidth, options;
       options = $(".option-bar li");

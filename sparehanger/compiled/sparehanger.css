@@ -225,7 +225,7 @@ textarea {
     padding: 10px;
     border-radius: 3px;
     border: 1px solid #e3e3e3;
-    overflow: scroll;
+    overflow: auto;
     max-height: 200px;
     white-space: nowrap; }
   .album-uploader input[type='file'] {
