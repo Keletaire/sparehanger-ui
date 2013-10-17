@@ -488,3 +488,12 @@ textarea {
     left: 40%;
     position: absolute;
     z-index: 99; }
+
+.unslider {
+  position: relative;
+  overflow: auto;
+  max-height: 300px; }
+  .unslider ul li {
+    list-style: none;
+    float: left;
+    text-align: center; }

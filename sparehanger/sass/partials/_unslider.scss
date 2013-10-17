@@ -1,0 +1,11 @@
+.unslider {
+	position: relative;
+	overflow: auto;
+	max-height: 300px;
+
+	ul li {
+		list-style: none;
+		float: left;
+		text-align: center;
+	}
+}

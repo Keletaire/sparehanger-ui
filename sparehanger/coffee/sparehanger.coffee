@@ -49,6 +49,13 @@ app = {
 		$('.popup-content .close').click ->
 			$(this).parents('.popup-content').removeClass 'active'
 
+	primeUnslider: ->
+		$('.unslider').unslider(
+			dots: true,
+			keys: true,
+			fluid: true
+		)
+
 
 	initializeGrid: ->
 		$("[class*='column-']").each ->
@@ -62,6 +69,7 @@ app = {
 		@primeAlertClose()
 		@primeDropdown()
 		@primePopup()
+		@primeUnslider()
 		true
 }
 

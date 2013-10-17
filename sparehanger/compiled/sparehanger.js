@@ -70,6 +70,13 @@
         return $(this).parents('.popup-content').removeClass('active');
       });
     },
+    primeUnslider: function() {
+      return $('.unslider').unslider({
+        dots: true,
+        keys: true,
+        fluid: true
+      });
+    },
     initializeGrid: function() {
       return $("[class*='column-']").each(function() {
         var percent;
@@ -84,6 +91,7 @@
       this.primeAlertClose();
       this.primeDropdown();
       this.primePopup();
+      this.primeUnslider();
       return true;
     }
   };
