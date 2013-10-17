@@ -1,0 +1,38 @@
+// Colors
+$dark-blue:   #37464F;
+$light-grey:  #E3E3E3;
+$green:       #6CC644;
+$red:         #B33630;
+
+
+* {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.wrap {
+	margin: 0 auto;
+	padding: 0 26px;
+	padding: 0 1.4rem;
+	max-width: 960px;
+}
+
+@import
+	"partials/grid",
+	"partials/text",
+	"partials/page-title",
+	"partials/buttons",
+	"partials/forms",
+	"partials/album-uploader",
+	"partials/alerts",
+	"partials/boxes",
+	"partials/hover-views",
+	"partials/option-bars",
+	"partials/dropdowns",
+	"partials/pills",
+	"partials/navbar",
+	"partials/popup";

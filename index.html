@@ -1,9 +1,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link href="sparehanger/css/sparehanger.css" rel="stylesheet">
+		<link href="sparehanger/compiled/sparehanger.css" rel="stylesheet">
 		<link href="styleguide/custom.css" rel="stylesheet">
-		<link href="sparehanger/vendor/ss-standard/webfonts/ss-standard.css" rel="stylesheet">
+		<link href="sparehanger/external/ss-standard/webfonts/ss-standard.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="http://softwaremaniacs.org/media/soft/highlight/styles/tomorrow.css">
 		<script type="text/javascript" src="//use.typekit.net/apg1vzb.js"></script>
@@ -172,33 +172,81 @@
 							<button type="submit" class="dark">Submit</button>
 						</div>
 					</form>
-					<div>
-						<h2>Album Uploader</h2>
-						<div class="album-uploader">
-							<form class="upload-area">
-								<input type="url" placeholder="URL (Optional)">
-								<span class="small primary button upload-button">
-									<i class="ss-icon">upload</i> Upload File
-									<input type="file">
-								</span>
-								<a class="small primary button" href=""><i class="ss-icon">link</i> Upload Via URL</a>
-							</form>
-							<div class="uploaded-area">
-								<div class="image-preview" style="background: url(http://placehold.it/150x150)">
-									<a class="small dark button" href=""><i class="ss-icon">check</i> Default</a>
-									<a class="small dangerous button" href=""><i class="ss-icon">delete</i> Delete</a>
-								</div>
-								<div class="image-preview" style="background: url(http://placehold.it/150x150)">
-									<a class="small button" href=""><i class="ss-icon">check</i> Set as Default</a>
-									<a class="small dangerous button" href=""><i class="ss-icon">delete</i> Delete</a>
-								</div>
-								<div class="image-preview" style="background: url(http://placehold.it/150x150)">
-									<a class="small button" href=""><i class="ss-icon">check</i> Set as Default</a>
-									<a class="small dangerous button" href=""><i class="ss-icon">delete</i> Delete</a>
-								</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column-100">
+					<div class="page-title">
+						<h1>Popup</h1>
+					</div>
+					<a class="popup-toggle button" href="#popup-demo">Click Me</a>
+					<div class="popup-content" id="popup-demo">
+						<span class="close"><i class="ss-icon">delete</i></span>
+						<br>
+						<h2>Header</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						</p>
+						<div class="field">
+							<label for="text-area">Text Area</label>
+							<textarea name="text-area"></textarea>
+						</div>
+						<div class="field">
+							<button type="submit" class="dark">Submit</button>
+						</div>
+					</div>
+					<pre><code>
+&lt;a class=&quot;popup-toggle button&quot; href=&quot;#popup-demo&quot;&gt;Click Me&lt;/a&gt;
+
+&lt;div class=&quot;popup-content&quot; id=&quot;popup-demo&quot;&gt;
+	&lt;span class=&quot;close&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;delete&lt;/i&gt;&lt;/span&gt;
+	&lt;h2&gt;Header&lt;/h2&gt;
+	...
+&lt;/div&gt;
+					</code></pre>
+					<p>
+						Popups are used for displaying extremely interuptive content. When clicked, the entire site is put at a standstill until the user interacts with the site. Therefore, popups should be used sparingly.
+					</p>
+					<p>
+						<h4>When should you use a popup?</h4>
+						<ul>
+							<li>Composing messages to other users</li>
+							<li>Confirming particularly destructive actions (deleting a brand)</li>
+							<li>Any time you want a user to be forced to interact with the site.</li>
+						</ul>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column-100">
+					<div class="page-title">
+						<h1>Album Uploader</h1>
+					</div>
+					<div class="album-uploader">
+						<form class="upload-area">
+							<input type="url" placeholder="URL (Optional)">
+							<span class="small primary button upload-button">
+								<i class="ss-icon">upload</i> Upload File
+								<input type="file">
+							</span>
+							<a class="small primary button" href=""><i class="ss-icon">link</i> Upload Via URL</a>
+						</form>
+						<div class="uploaded-area">
+							<div class="image-preview" style="background: url(http://placehold.it/150x150)">
+								<a class="small dark button" href=""><i class="ss-icon">check</i> Default</a>
+								<a class="small dangerous button" href=""><i class="ss-icon">delete</i> Delete</a>
+							</div>
+							<div class="image-preview" style="background: url(http://placehold.it/150x150)">
+								<a class="small button" href=""><i class="ss-icon">check</i> Set as Default</a>
+								<a class="small dangerous button" href=""><i class="ss-icon">delete</i> Delete</a>
+							</div>
+							<div class="image-preview" style="background: url(http://placehold.it/150x150)">
+								<a class="small button" href=""><i class="ss-icon">check</i> Set as Default</a>
+								<a class="small dangerous button" href=""><i class="ss-icon">delete</i> Delete</a>
 							</div>
 						</div>
-						<pre><code>
+					</div>
+					<pre><code>
 &lt;div class=&quot;album-uploader&quot;&gt;
 	&lt;form class=&quot;upload-area&quot;&gt;
 		&lt;input type=&quot;url&quot; placeholder=&quot;URL (Optional)&quot;&gt;
@@ -216,27 +264,18 @@
 		...
 	&lt;/div&gt;
 &lt;/div&gt;
-						</code></pre>
-						<p>
-							The album uploader is used for uploading a bunch of images at once. Optimally, each time a green button is pressed a new image will be uploaded and a preview will be appended to the scrolling box on the right. When a user clicks the "Set as Default" button, the button should reflect the change by changing its class.
-						</p>
-						<p>
-							<h4>When should you use an album uploader?</h4>
-							<ul>
-								<li>Choosing images to upload for an item</li>
-								<li>Uploading profile photos</li>
-								<li>Any time you want a user to upload multiple images with a bit of context.</li>
-							</ul>
-						</p>
-					</div>
-					<div>
-						<h2>Popup</h2>
-						<a class="button" href="">Click Me</a>
-						<div class="popup-content">
-							<h2>Header</h2>
-
-						</div>
-					</div>
+					</code></pre>
+					<p>
+						The album uploader is used for uploading a bunch of images at once. Optimally, each time a green button is pressed a new image will be uploaded and a preview will be appended to the scrolling box on the right. When a user clicks the "Set as Default" button, the button should reflect the change by changing its class.
+					</p>
+					<p>
+						<h4>When should you use an album uploader?</h4>
+						<ul>
+							<li>Choosing images to upload for an item</li>
+							<li>Uploading profile photos</li>
+							<li>Any time you want a user to upload multiple images with a bit of context.</li>
+						</ul>
+					</p>
 				</div>
 			</div>
 			<div class="row">
@@ -565,7 +604,7 @@
 			</div>
 		</div>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="sparehanger/js/sparehanger.js"></script>
+		<script src="sparehanger/compiled/sparehanger.js"></script>
 		<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
 		<script>
 			$(function() {

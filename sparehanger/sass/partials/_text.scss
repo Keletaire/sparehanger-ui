@@ -1,0 +1,44 @@
+html {
+	color: #333;
+	font: 100%/1.4 "Proxima Nova", "Lato", sans-serif;
+}
+
+p {
+	padding: 4px 0;
+}
+
+a {
+	color: #4183C4;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 1.8rem;
+	line-height: 1.7;
+}
+
+h2 {
+	font-size: 1.5rem;
+	line-height: 1.7;
+}
+
+
+h3 {
+	font-size: 1.3rem;
+	line-height: 1.7;
+}
+
+h4 {
+	font-size: 1.1rem;
+	line-height: 1.7;
+}
+
+.ss-icon { vertical-align: middle; }
+.red   { color: $red; }
+.green { color: $green; }
+.dark  { color: $dark-blue; }
+.grey  { color: #999; }
