@@ -42,10 +42,20 @@
       });
     },
     primeDropdown: function() {
-      return $(".dropdown-toggle").click(function() {
-        var parent;
-        parent = $(this).parent();
-        return $(".dropdown-list", parent).show();
+      $(".dropdown-toggle").click(function() {
+        var list;
+        list = $(".dropdown-list", $(this).parent());
+        list.addClass('active');
+        return list.show();
+      });
+      return $(document).on('click', function(e) {
+        var dropdown;
+        if ($(e.target).hasClass('dropdown-list') || $(e.target).hasClass('dropdown-toggle') || $(e.target).parent().hasClass('dropdown-toggle')) {
+          return;
+        }
+        dropdown = $('.dropdown-list.active');
+        dropdown.removeClass('active');
+        return dropdown.hide();
       });
     },
     primePopup: function() {

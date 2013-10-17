@@ -28,8 +28,15 @@ app = {
 
   primeDropdown: ->
     $(".dropdown-toggle").click ->
-      parent = $(this).parent()
-      $(".dropdown-list", parent).show()
+      list = $(".dropdown-list", $(this).parent());
+      list.addClass('active')
+      list.show()
+    $(document).on 'click', (e) ->
+      if $(e.target).hasClass('dropdown-list') or $(e.target).hasClass('dropdown-toggle') or $(e.target).parent().hasClass('dropdown-toggle')
+        return
+      dropdown = $('.dropdown-list.active')
+      dropdown.removeClass 'active'
+      dropdown.hide()
 
   primePopup: ->
     $('.popup-toggle').click ->
