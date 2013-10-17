@@ -126,6 +126,49 @@
 					<div class="page-title">
 						<h1>Forms</h1>
 					</div>
+					<pre><code>
+&lt;div class=&quot;required field&quot;&gt;
+	&lt;label for=&quot;required-text-box&quot;&gt;Required Text Box&lt;/label&gt;
+	&lt;input name=&quot;required-text-box&quot; type=&quot;text&quot;&gt;
+&lt;/div&gt;
+					</code></pre>
+					<form class="test-form">
+						<div class="field">
+							<label for="text-box">Text Box</label>
+							<input name="text-box" type="text">
+						</div>
+						<div class="required field">
+							<label for="required-text-box">Required Text Box</label>
+							<input name="required-text-box" type="text">
+						</div>
+						<div class="field">
+							<label for="select-box">Select Box</label>
+							<select name="select-box">
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+								<option value="3">Option 3</option>
+							</select>
+						</div>
+						<div class="field">
+							<label for="text-area">Text Area</label>
+							<textarea name="text-area"></textarea>
+						</div>
+						<div class="field">
+							<label for="radio-button">Radio Box</label>
+							<label for="radio-button-1">
+								<input name="radio-button" id="radio-button-1" type="radio"> Thing One
+							</label>
+							<label for="radio-button-2">
+								<input name="radio-button" id="radio-button-2" type="radio"> Thing Two
+							</label>
+						</div>
+						<div class="field">
+							<label for="check-box">Check Box</label>
+							<label for="check-box-1">
+								<input name="check-box" id="check-box-1" type="checkbox"> Wow, a checkbox
+							</label>
+						</div>
+					</form>
 					<div>
 						<h2>Album Uploader</h2>
 						<div class="album-uploader">
