@@ -1,0 +1,15 @@
+.option-bar {
+	padding-bottom: 10px;
+	width: 100%;
+	border-bottom: 1px solid #EAEAEA;
+	list-style: none;
+
+	li {
+		display: inline-block;
+		height: 40px;
+
+		.button {
+			width: 100%;
+		}
+	}
+}

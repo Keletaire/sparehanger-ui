@@ -1,0 +1,53 @@
+.hover-view {
+	display: inline-block;
+	margin: 10px;
+
+	.hover-img {
+		opacity: 1;
+		-webkit-transition: opacity .05s linear;
+	}
+
+	.hover-content {
+		position: absolute;
+		top: 0;
+		bottom: 30px;
+		left: 0;
+		z-index: 3;
+		overflow: hidden;
+		margin: 0;
+		padding: 20px;
+		width: 100%;
+		background: rgba(255, 255, 255, 0.96);
+		color: #222;
+		text-decoration: none;
+		font-size: 1rem;
+		line-height: 1.2;
+		opacity: 0;
+		-webkit-transition: opacity .1s linear;
+	}
+
+	.hover-tools {
+		position: absolute;
+		top: 85%;
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+		overflow: hidden;
+		margin: 0;
+		width: 100%;
+		background: rgba(255, 255, 255, 0.96);
+		color: #222;
+		text-decoration: none;
+		font-size: 1rem;
+		opacity: 0;
+		-webkit-transition: opacity .1s linear;
+
+		a { color: #333 };
+	}
+
+	.count {
+		margin-left: 2px;
+		color: #555;
+		font-size: .75rem;
+	}
+}

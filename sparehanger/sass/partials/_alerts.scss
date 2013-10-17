@@ -1,0 +1,26 @@
+.alert {
+	padding: 15px;
+	border: 1px solid #97C1DA;
+	border-radius: 3px;
+	background-color: #D0E3EF;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	color: #264C72;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+
+	&.warning {
+		border-color: #DCA874;
+		background-color: #F5DAC0;
+		color: #613A00;
+	}
+
+	&.error {
+		border-color: #DA9797;
+		background-color: #EFD0D0;
+		color: #911;
+	}
+
+	.close {
+		float: right;
+		cursor: pointer;
+	}
+}
