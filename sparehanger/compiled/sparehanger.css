@@ -448,3 +448,5 @@ textarea {
     position: fixed;
     display: inherit;
     padding: 20% 30%; }
+  .popup-content h2 {
+    margin-top: 10px; }
