@@ -8,10 +8,6 @@ App = function() {
 		this.primeDropdown();
 	};
 
-	this.primeImageUploader = function() {
-		// ?
-	};
-
 	this.primeOptionBar = function() {
 		var options = $('.option-bar li');
 		var optionWidth = 100 / options.length
@@ -42,13 +38,12 @@ App = function() {
 	};
 
 	this.primeDropdown = function() {
-		var anyClick = $(document).click(function() {
-			// a click has happened, anywhere?
-		});
 		$('.dropdown-toggle').click(function() {
 			var parent = $(this).parent();
 			$('.dropdown-list', parent).show();
 		});
+
+		// TODO: close the menu when the user clicks
 	};
 
 	this.initializeGrid = function() {
