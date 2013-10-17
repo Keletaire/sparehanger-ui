@@ -27,6 +27,7 @@
 
 	.navbar-left {
 		width: 33%;
+		height: 1.3rem;
 		display: inline-block;
 	}
 
@@ -44,6 +45,11 @@
 	.navbar-right {
 		display: inline-block;
 		width: 33%;
+		height: 1.3rem;
+
+		.ss-icon {
+			vertical-align: baseline;
+		}
 	}
 
 	.navbar-search {
@@ -61,16 +67,20 @@
 		list-style: none;
 		float: right;
 
-		li {
+		& > li {
 			display: inline-block;
 			padding-left: 10px;
 			height: 1.3rem;
-		}
 
-		a {
-			display: inline-block;
-			vertical-align: middle;
-			color: $light-grey;
+			a {
+				display: inline-block;
+				vertical-align: middle;
+				color: $light-grey;
+			}
 		}
 	}
+
+	// .dropdown-list a {
+	// 	color: $dark-blue !important;
+	// }
 }
