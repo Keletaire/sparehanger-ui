@@ -1,6 +1,14 @@
 app = {
 	name: "Spare Hanger JS"
 	
+	primeIsotope: ->
+		$("[isotope]").isotope(
+			itemSelector: $(this).attr('isotope'),
+			layoutMode: 'masonry',
+			animationOptions:
+				duration: 100,
+				easing: 'linear'
+		)
 
 	primeOptionBar: ->
 		options = $(".option-bar li")
@@ -59,6 +67,7 @@ app = {
 		@initializeGrid()
 		@primeOptionBar()
 		@primeHoverView()
+		@primeIsotope()
 		@primeAlertClose()
 		@primeDropdown()
 		@primePopup()
