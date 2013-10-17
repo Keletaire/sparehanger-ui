@@ -70,6 +70,12 @@
 		font-size: .7rem;
 		font-weight: bold;
 	}
+
+	&.big {
+		padding: 10px 20px;
+		border-radius: 4px;
+		font-size: 1.25rem;
+	}
 }
 
 button {
