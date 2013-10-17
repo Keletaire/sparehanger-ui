@@ -31,6 +31,12 @@ app = {
       parent = $(this).parent()
       $(".dropdown-list", parent).show()
 
+  primePopup: ->
+    $('.popup-toggle').click ->
+      $($(this).attr('href')).addClass 'active'
+    $('.popup-content .close').click ->
+      $(this).parents('.popup-content').removeClass 'active'
+
 
   initializeGrid: ->
     $("[class*='column-']").each ->
@@ -43,6 +49,7 @@ app = {
     @primeHoverView()
     @primeAlertClose()
     @primeDropdown()
+    @primePopup()
 }
 
 app.go()

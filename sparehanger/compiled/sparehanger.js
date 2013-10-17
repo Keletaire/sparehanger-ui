@@ -48,6 +48,14 @@
         return $(".dropdown-list", parent).show();
       });
     },
+    primePopup: function() {
+      $('.popup-toggle').click(function() {
+        return $($(this).attr('href')).addClass('active');
+      });
+      return $('.popup-content .close').click(function() {
+        return $(this).parents('.popup-content').removeClass('active');
+      });
+    },
     initializeGrid: function() {
       return $("[class*='column-']").each(function() {
         var percent;
@@ -60,7 +68,8 @@
       this.primeOptionBar();
       this.primeHoverView();
       this.primeAlertClose();
-      return this.primeDropdown();
+      this.primeDropdown();
+      return this.primePopup();
     }
   };
 
