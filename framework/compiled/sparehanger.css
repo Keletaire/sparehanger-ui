@@ -485,7 +485,9 @@ textarea {
     left: 10%;
     padding: 5px 15px;
     position: absolute;
-    z-index: 98; }
+    z-index: 98;
+    font-size: 0.8rem;
+    text-align: center; }
   [tooltip]:hover:before {
     border: solid;
     opacity: 0.8;
