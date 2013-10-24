@@ -2,25 +2,18 @@
 $base:            #333;
 $blue:            #2980B9;
 $dark-blue:       #34495E;
-$very-dark-blue:  #2C3E50;
-$very-light-grey: #ECF0F1;
 $light-grey:      #E3E3E3;
-$dark-grey:       #BDC3C7;
 $green:           #2ECC71;
-$dark-green:      #27AE60;
 $red:             #E74C3C;
-$dark-red:        #C0392B;
 $orange:          #E67E22;
-$dark-orange:     #D35400;
+$very-dark-blue:  darken($dark-blue, 10%);
+$dark-grey:       darken($light-grey, 5%);
+$dark-green:      darken($green, 10%);
+$dark-red:        darken($red, 10%);
+$dark-orange:     darken($orange, 10%);
+$very-light-grey: lighten($light-grey, 5%);
 
-$filter-color-1: #C69;
-$filter-color-2: #B37399;
-$filter-color-3: #998099;
-$filter-color-4: #699;
-$filter-color-5: #D2E1DD;
-$filter-color-6: #FFF;
-$filter-color-7: #F2ECE4;
-
+$filter-color-key: #C69;
 
 * {
 	position: relative;

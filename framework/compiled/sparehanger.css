@@ -84,7 +84,7 @@ h4 {
   color: #34495e; }
 
 .grey {
-  color: #bdc3c7; }
+  color: #d6d6d6; }
 
 .page-title {
   margin-bottom: 20px;
@@ -122,28 +122,28 @@ h4 {
     background-color: #DADADA;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.15); }
   .button.primary, button.primary {
-    border-color: #27ae60;
+    border-color: #25a25a;
     background-color: #2ecc71;
     color: #FFF; }
     .button.primary:hover, button.primary:hover {
       border-color: #4A993E;
-      background-color: #27ae60; }
+      background-color: #25a25a; }
     .button.primary:active, button.primary:active {
       border-color: #418737;
-      background-color: #27ae60; }
+      background-color: #25a25a; }
   .button.dangerous, button.dangerous {
     color: #e74c3c; }
     .button.dangerous:hover, button.dangerous:hover {
-      border-color: #c0392b;
+      border-color: #d62c1a;
       background-color: #e74c3c;
       color: #FFF; }
   .button.dark, button.dark {
-    border-color: #2c3e50;
+    border-color: #222f3d;
     background-color: #34495e;
     color: #FFF; }
     .button.dark:hover, button.dark:hover {
       border-color: #333;
-      background-color: #2c3e50; }
+      background-color: #222f3d; }
   .button.small, button.small {
     padding: 4px 6px;
     border-radius: 2px;
@@ -287,7 +287,7 @@ textarea {
   .box h2 {
     padding: 10px;
     border-bottom: 1px solid #e3e3e3;
-    background: #ecf0f1;
+    background: #f0f0f0;
     font-size: 1.2rem; }
   .box .box-inner {
     padding: 10px; }
@@ -402,7 +402,7 @@ textarea {
   color: #FFF;
   padding: 5px;
   border-radius: 3px;
-  border-bottom: 3px solid #2c3e50; }
+  border-bottom: 3px solid #222f3d; }
   .navbar:before, .navbar:after {
     display: table;
     content: " "; }
@@ -459,7 +459,7 @@ textarea {
   -webkit-transition: opacity .4s linear; }
   .popup-content.active {
     opacity: 0.98;
-    background: #2c3e50;
+    background: #222f3d;
     color: #FFF;
     width: 100%;
     height: 100%;
