@@ -28,18 +28,18 @@
 	}
 
 	&.primary {
-		border-color: #5CA941;
+		border-color: $dark-green;
 		background-color: $green;
 		color: #FFF;
 
 		&:hover {
 			border-color: #4A993E;
-			background-color: #569E3D;
+			background-color: $dark-green;
 		}
 
 		&:active {
 			border-color: #418737;
-			background-color: #569E3D;
+			background-color: $dark-green;
 		}
 	}
 
@@ -47,20 +47,20 @@
 		color: $red;
 
 		&:hover {
-			border-color: #9F312C;
+			border-color: $dark-red;
 			background-color: $red;
 			color: #FFF;
 		}
 	}
 
 	&.dark {
-		border-color: #2C3840;
+		border-color: $very-dark-blue;
 		background-color: $dark-blue;
 		color: #FFF;
 
 		&:hover {
 			border-color: #333;
-			background-color: #2C3840;
+			background-color: $very-dark-blue;
 		}
 	}
 

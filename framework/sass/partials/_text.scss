@@ -8,7 +8,7 @@ p {
 }
 
 a {
-	color: #4183C4;
+	color: $blue;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -42,4 +42,4 @@ h4 {
 .red   { color: $red; }
 .green { color: $green; }
 .dark  { color: $dark-blue; }
-.grey  { color: #999; }
+.grey  { color: $dark-grey; }
