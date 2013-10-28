@@ -33,6 +33,9 @@
         var list;
         list = $(".dropdown-list", $(this).parent());
         list.addClass('active');
+        if (list.offset().left < 150) {
+          list.css("left", "-150px");
+        }
         return list.show();
       });
       return $(document).on('click', function(e) {
