@@ -7,7 +7,7 @@
   padding: 0; }
 
 .wrap {
-  margin: 0 auto;
+  margin: 48px auto;
   padding: 0 26px;
   padding: 0 1.4rem;
   max-width: 960px; }
@@ -356,7 +356,6 @@ textarea {
   top: 100%;
   z-index: 1000;
   display: none;
-  margin-left: 0;
   padding: 9px 0;
   min-width: 160px;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -415,7 +414,8 @@ textarea {
     display: inherit;
     margin: 0;
     border-radius: 0;
-    opacity: 0.98; }
+    opacity: 0.98;
+    z-index: 10000; }
   .navbar .navbar-left {
     width: 33%;
     height: 1.3rem;
