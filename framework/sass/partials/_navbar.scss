@@ -78,9 +78,13 @@
 				color: $light-grey;
 			}
 		}
-	}
 
-	// .dropdown-list a {
-	// 	color: $dark-blue !important;
-	// }
+		.dropdown-list a {
+			color: $dark-blue !important;
+
+			&:hover {
+				color: inherit !important;
+			}
+		}
+	}
 }

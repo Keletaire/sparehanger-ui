@@ -375,7 +375,7 @@ textarea {
     .dropdown .dropdown-list li a {
       display: block;
       padding: 3px 20px;
-      color: inherit; }
+      color: #34495e; }
 
 .pills {
   list-style: none; }
@@ -451,6 +451,10 @@ textarea {
         display: inline-block;
         vertical-align: middle;
         color: #e3e3e3; }
+    .navbar .navbar-options .dropdown-list a {
+      color: #34495e !important; }
+      .navbar .navbar-options .dropdown-list a:hover {
+        color: inherit !important; }
 
 .popup-content {
   display: none;
