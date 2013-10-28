@@ -23,9 +23,10 @@
       });
     },
     primeAlertClose: function() {
-      return $(".alert .close").click(function() {
+      $(".alert .close").click(function() {
         return $(this).parents(".alert").hide();
       });
+      return $(".alert.temporary").fadeOut(10000);
     },
     primeDropdown: function() {
       $(".dropdown-toggle").click(function() {

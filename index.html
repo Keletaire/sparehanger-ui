@@ -307,6 +307,10 @@
 					<div class="page-title">
 						<h1>Alerts</h1>
 					</div>
+					<div class="temporary alert">
+						<span class="ss-icon close">close</span>
+						<strong>.alert:</strong> Check this out!
+					</div>
 					<div class="alert">
 						<span class="ss-icon close">close</span>
 						<strong>.alert:</strong> Check this out!
@@ -326,7 +330,7 @@
 &lt;/div&gt;
 					</code></pre>
 					<p>
-						Alerts are useful for when you want to let a user know whether something happened or not, and also for letting users know about updates. Alerts will hide themselves when a user closes them.
+						Alerts are useful for when you want to let a user know whether something happened or not, and also for letting users know about updates. Alerts will hide themselves when a user closes them, and take an optional <code>temporary</code> class to slowly fade off the page.
 						<h4>When should you use an alert?</h4>
 						<ul>
 							<li>There was an error saving something to the database</li>

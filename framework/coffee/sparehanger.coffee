@@ -24,6 +24,7 @@ app = {
 	primeAlertClose: ->
 		$(".alert .close").click ->
 			$(this).parents(".alert").hide()
+		$(".alert.temporary").fadeOut 10000
 
 
 	primeDropdown: ->
