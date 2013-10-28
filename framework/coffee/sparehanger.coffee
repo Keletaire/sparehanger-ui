@@ -15,7 +15,8 @@ app = {
 		options = $(".option-bar li")
 		optionWidth = 100 / options.length
 		
-		# font size is defined by a parabola with vertex (1, 1) downward sloping
+		# font size is defined by a downward sloping parabola with vertex (1 element, 1 rem).
+		# basically - options go up, font size goes down
 		options.css
 			width:       optionWidth - 0.40 + "%"
 			"font-size": (-1 / 150 * Math.pow(options.length - 1, 2) + 1) + "rem"

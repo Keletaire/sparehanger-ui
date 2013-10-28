@@ -6,11 +6,11 @@ $light-grey:      #E3E3E3;
 $green:           #2ECC71;
 $red:             #E74C3C;
 $orange:          #E67E22;
-$very-dark-blue:  darken($dark-blue, 10%);
 $dark-grey:       darken($light-grey, 5%);
 $dark-green:      darken($green, 10%);
 $dark-red:        darken($red, 10%);
 $dark-orange:     darken($orange, 10%);
+$very-dark-blue:  darken($dark-blue, 10%);
 $very-light-grey: lighten($light-grey, 5%);
 
 $filter-color-key: #C69;

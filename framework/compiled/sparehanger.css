@@ -51,9 +51,8 @@ a {
   color: #2980b9;
   text-decoration: none;
   cursor: pointer; }
-
-a:hover {
-  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
 
 h1 {
   font-size: 1.8rem;
@@ -75,16 +74,16 @@ h4 {
   vertical-align: middle; }
 
 .red {
-  color: #e74c3c; }
+  color: #e74c3c !important; }
 
 .green {
-  color: #2ecc71; }
+  color: #2ecc71 !important; }
 
-.dark {
-  color: #34495e; }
+.blue {
+  color: #34495e !important; }
 
 .grey {
-  color: #d6d6d6; }
+  color: #d6d6d6 !important; }
 
 .page-title {
   margin-bottom: 20px;
