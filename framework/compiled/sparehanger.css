@@ -369,7 +369,7 @@ textarea {
     border-top: 1px solid #eee; }
     .dropdown .dropdown-list li:hover {
       background: #34495e;
-      color: #FFF; }
+      color: #FFF !important; }
     .dropdown .dropdown-list li:first-child {
       border-top: 0; }
     .dropdown .dropdown-list li a {
