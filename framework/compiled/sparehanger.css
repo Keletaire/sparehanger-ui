@@ -356,7 +356,7 @@ textarea {
   top: 100%;
   z-index: 1000;
   display: none;
-  margin-left: 5px;
+  margin-left: 0;
   padding: 9px 0;
   min-width: 160px;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -376,6 +376,8 @@ textarea {
       display: block;
       padding: 3px 20px;
       color: #34495e; }
+      .dropdown .dropdown-list li a:hover {
+        color: #FFF !important; }
 
 .pills {
   list-style: none; }
