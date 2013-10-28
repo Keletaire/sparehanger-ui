@@ -60,7 +60,8 @@ select {
 }
 
 input[type='radio'], input[type='checkbox'] {
-	margin-right: 5px;
+	margin: 0 5px;
+	vertical-align: middle;
 }
 
 .required label:before {
