@@ -491,7 +491,7 @@ textarea {
     left: 10%;
     padding: 5px 15px;
     position: absolute;
-    z-index: 98;
+    z-index: 50000;
     font-size: 0.8rem;
     text-align: center; }
   [tooltip]:hover:before {
@@ -503,4 +503,4 @@ textarea {
     content: "";
     left: 40%;
     position: absolute;
-    z-index: 99; }
+    z-index: 50001; }
