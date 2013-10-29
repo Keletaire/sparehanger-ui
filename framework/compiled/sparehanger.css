@@ -346,7 +346,6 @@ textarea {
 .option-bar {
   padding-bottom: 10px;
   width: 100%;
-  border-bottom: 1px solid #EAEAEA;
   list-style: none; }
   .option-bar li {
     display: inline-block;

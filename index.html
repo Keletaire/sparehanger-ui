@@ -323,11 +323,12 @@
 						<span class="ss-icon close">close</span>
 						<strong>.alert.error:</strong> Something went wrong!
 					</div>
-					<pre><code>
-&lt;div class=&quot;alert&quot;&gt;
-	&lt;span class=&quot;ss-icon close&quot;&gt;close&lt;/span&gt;
-	&lt;strong&gt;.alert:&lt;/strong&gt; Check this out!
-&lt;/div&gt;
+					<pre><code class="php">
+&lt;? $this-&gt;widget('widgets.alert.Alert', array(
+	'content' =&gt; &quot;Logged in Successfully&quot;,
+	'temporary' =&gt; true, // Optional
+	'type' =&gt; 'warning', // Optional
+)); ?&gt;
 					</code></pre>
 					<p>
 						Alerts are useful for when you want to let a user know whether something happened or not, and also for letting users know about updates. Alerts will hide themselves when a user closes them, and take an optional <code>temporary</code> class to slowly fade off the page.
@@ -483,14 +484,27 @@
 						<li><a href="" class="button"><i class="ss-icon">pencil</i> Edit Brand</a></li>
 						<li><a href="" class="primary button"><i class="ss-icon">compose</i> Add a Product	</a></li>
 					</ul>
-					<pre><code>
-&lt;ul class=&quot;option-bar&quot;&gt;
-	&lt;li&gt;&lt;a href=&quot;&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;eye&lt;/i&gt; Brands Followed&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;key&lt;/i&gt; Manage Brands&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;&quot; class=&quot;button&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;plus&lt;/i&gt; Create Brand&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;&quot; class=&quot;dangerous button&quot;&gt;&lt;i class=&quot;ss-icon&quot;&gt;delete&lt;/i&gt; Delete Brand&lt;/a&gt;&lt;/li&gt;
-	...
-&lt;/ul&gt;
+					<pre><code class="php">
+&lt;? $this-&gt;widget('widgets.optionbar.OptionBar', array(
+	'options' =&gt; array(
+		'Brands Followed' =&gt; array(
+			'url'   =&gt; Yii::app()-&gt;createAbsoluteUrl('/brands/following'),
+			'class' =&gt; 'button',
+			'icon'  =&gt; 'eye',
+		),
+		'Manage Brands' =&gt; array(
+			'url'   =&gt; Yii::app()-&gt;createAbsoluteUrl('/brands/manage'),
+			'class' =&gt; 'button',
+			'icon'  =&gt; 'key',
+		),
+		'Create Brand' =&gt; array(
+			'url'   =&gt; Yii::app()-&gt;createAbsoluteUrl('/brands/create'),
+			'class' =&gt; 'primary button',
+			'icon'  =&gt; 'plus',
+		),
+		// and so on...
+	),
+)); ?&gt;
 					</code></pre>
 					<p>
 						Option bars provide a way to present a user with multiple relevant choices to click based on the page they are currently on. Option bars should <em>not</em> be used for site-wide navigation, but for links to relevant pages. Options take any of the available button classes.
