@@ -33,6 +33,6 @@ ul:not(.option-bar) {
 	padding: 20px;
 }
 
-pre, code, .tag, .attribute, .value, .title {
+pre * {
 	font-family: monospace !important;
 }
