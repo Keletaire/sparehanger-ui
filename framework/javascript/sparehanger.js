@@ -59,19 +59,12 @@ app = {
 	objects: {
 		filterByString: function(filter, containerClass) {
 			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
-			var container = $(containerClass);	
+			var container = $(containerClass);
 			container.find(".hover-view").show();
-			container.magicMove({
-					duration: 0
-				}, function() {
-					if (filter.length > 0) {
-						var unwantedObjects = container.find(".hover-view:not([data-index*='" + filter + "'])");
-						var wantedObjects = container.find(".hover-view[data-index*='" + filter + "']");
-						console.log(wantedObjects);
-						unwantedObjects.hide();
-					}
-				}
-			);
+			if (filter.length > 0) {
+				var unwantedObjects = container.find(".hover-view:not([data-index*='" + filter + "'])");
+				unwantedObjects.hide();
+			}
 		},
 
 		filterByClasses: function(classNames, containerClass) {
@@ -83,17 +76,10 @@ app = {
 			}
 
 			container.find(".hover-view").show();
-			container.magicMove({
-					duration: 0
-				}, function() {
-					if (filter.length > 0) {
-						var unwantedObjects = container.find(".hover-view:not(" + filter + ")");
-						console.log(unwantedObjects);
-						unwantedObjects.hide();
-						console.log(".hover-view:not(" + filter + ")");
-					}
-				}
-			);
+			if (filter.length > 0) {
+				var unwantedObjects = container.find(".hover-view:not(" + filter + ")");
+				unwantedObjects.hide();
+			}
 		},
 
 		add: function(objects, containerClass) {
