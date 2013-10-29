@@ -1,4 +1,5 @@
 app = {
+	self: this,
 	name: "Spare Hanger JS",
 
 	primeOptionBar: function() {
@@ -86,13 +87,27 @@ app = {
 			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
 			var container = $(containerClass);
 			var currentObjects = container.find('.hover-view');
-			container.magicMove({
-					duration: 200
-				}, function() {
-					container.find(".hover-view:nth-child(" + currentObjects.length + ")").after(objects);
+			container.find(".hover-view:nth-child(" + currentObjects.length + ")").after(objects);
+		},
+
+		ajax: {
+			getItems: function(filters, containerClass) {
+				filters = typeof filters !== 'undefined' ? filters : {};
+				containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
+
+				var filterString = "";
+				for (var filterType in filters) {
+					filterString += "filters[" + filterType + "]=" + filters[filterType] + "&";
 				}
-			);
-		}
+
+				$.ajax({
+					data: "ajax=true&" + filterString,
+					url: "/items"
+				}).done(function(data) {
+						app.objects.add(data, containerClass);
+				});
+			}
+		},
 	},
 
 	go: function() {
@@ -106,4 +121,8 @@ app = {
 
 $(function() {
 	app.go();
+
+	$('#getitems').click(function() {
+		app.objects.ajax.getItems();
+	});
 });
