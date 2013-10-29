@@ -32,6 +32,10 @@
 		line-height: 1.2;
 		opacity: 0;
 		-webkit-transition: opacity .1s linear;
+
+		h4 {
+			line-height: 1.1rem;
+		}
 	}
 
 	.hover-tools {

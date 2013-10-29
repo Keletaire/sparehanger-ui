@@ -319,6 +319,8 @@ textarea {
     line-height: 1.2;
     opacity: 0;
     -webkit-transition: opacity .1s linear; }
+    .hover-view .hover-content h4 {
+      line-height: 1.1rem; }
   .hover-view .hover-tools {
     position: absolute;
     top: 85%;
@@ -428,6 +430,8 @@ textarea {
     .navbar .navbar-center h1 {
       font-size: 1.3rem;
       font-weight: normal; }
+      .navbar .navbar-center h1 a {
+        color: inherit; }
   .navbar .navbar-right {
     display: inline-block;
     width: 33%;
