@@ -1,17 +1,6 @@
 app = {
 	name: "Spare Hanger JS",
 
-	primeIsotope: function() {
-		$("[isotope]").isotope({
-			itemSelector: $(this).attr('isotope'),
-			layoutMode: 'masonry',
-			animationOptions: {
-				duration: 100,
-				easing: 'linear'
-			}
-		});
-	},
-
 	primeOptionBar: function() {
 		var options = $(".option-bar li");
 		var optionWidth = 100 / options.length;
@@ -66,11 +55,60 @@ app = {
 			$(this).css("width", percent + "%");
 		});
 	},
-	
+
+	objects: {
+		filterByString: function(filter) {
+			var container = $('.objects');	
+			container.find(".hover-view").show();
+			container.magicMove({
+					duration: 0
+				}, function() {
+					if (filter.length > 0) {
+						var unwantedObjects = container.find(".hover-view:not([data-index*='" + filter + "'])");
+						var wantedObjects = container.find(".hover-view[data-index*='" + filter + "']");
+						console.log(wantedObjects);
+						unwantedObjects.hide();
+					}
+				}
+			);
+		},
+
+		filterByClasses: function(classNames) {
+			var container = $('.objects');
+			var filter = "";
+			for (var i = 0; i < classNames.length; i++) {
+				filter += (i + 1 == classNames.length) ? classNames[i] : classNames[i] + ", ";
+			}
+
+			container.find(".hover-view").show();
+			container.magicMove({
+					duration: 0
+				}, function() {
+					if (filter.length > 0) {
+						var unwantedObjects = container.find(".hover-view:not(" + filter + ")");
+						console.log(unwantedObjects);
+						unwantedObjects.hide();
+						console.log(".hover-view:not(" + filter + ")");
+					}
+				}
+			);
+		},
+
+		add: function(objects) {
+			var container = $('.objects');
+			var currentObjects = container.find('.hover-view');
+			container.magicMove({
+					duration: 200
+				}, function() {
+					container.find(".hover-view:nth-child(" + currentObjects.length + ")").after(objects);
+				}
+			);
+		}
+	},
+
 	go: function() {
 		this.initializeGrid();
 		this.primeOptionBar();
-		this.primeIsotope();
 		this.primeAlertClose();
 		this.primeDropdown();
 		this.primePopup();
