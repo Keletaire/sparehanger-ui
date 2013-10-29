@@ -57,8 +57,9 @@ app = {
 	},
 
 	objects: {
-		filterByString: function(filter) {
-			var container = $('.objects');	
+		filterByString: function(filter, containerClass) {
+			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
+			var container = $(containerClass);	
 			container.find(".hover-view").show();
 			container.magicMove({
 					duration: 0
@@ -73,8 +74,9 @@ app = {
 			);
 		},
 
-		filterByClasses: function(classNames) {
-			var container = $('.objects');
+		filterByClasses: function(classNames, containerClass) {
+			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
+			var container = $(containerClass);	
 			var filter = "";
 			for (var i = 0; i < classNames.length; i++) {
 				filter += (i + 1 == classNames.length) ? classNames[i] : classNames[i] + ", ";
@@ -94,8 +96,9 @@ app = {
 			);
 		},
 
-		add: function(objects) {
-			var container = $('.objects');
+		add: function(objects, containerClass) {
+			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
+			var container = $(containerClass);
 			var currentObjects = container.find('.hover-view');
 			container.magicMove({
 					duration: 200
