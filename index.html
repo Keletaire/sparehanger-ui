@@ -608,17 +608,19 @@
 					</p>
 					<pre><code class="javascript">
 $(function() {
-	// All functions take an optional second argument that contains a selector for the parent container.
-	// By default, it is &quot;.objects&quot;
+	// containerClass is optional for all methods, defaults to &quot;.objects&quot;
 
 	// Filter objects by a single string, i.e. searching
-	app.objects.filterByString(&quot;red&quot;);
+	app.objects.filterByString(&quot;red&quot;, containerClass);
 
 	// Filter objects by multiple classes, i.e. sorting by categories
-	app.objects.filterByClasses([&quot;.red&quot;, &quot;.green&quot;]);
+	app.objects.filterByClasses([&quot;.red&quot;, &quot;.green&quot;], containerClass);
 
-	// Adding objects to the container
-	app.objects.add($(&quot;&lt;div class='hover-view'&gt;...&lt;/div&gt;&quot;));
+	// Directly adding objects to the container
+	app.objects.add($(&quot;&lt;div class='hover-view'&gt;...&lt;/div&gt;&quot;, containerClass));
+
+	// Make an ajax call to add a number of items to the page
+	app.objects.ajax.getItems(amount, {category_one_id: 2}, containerClass);
 });
 					</code></pre>
 				</div>
