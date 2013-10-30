@@ -1,8 +1,10 @@
 app = {
-	self: this,
-	name: "Spare Hanger JS",
 
-	primeOptionBar: function() {
+	settings: {
+
+	},
+
+	resizeOptionBars: function() {
 		var options = $(".option-bar li");
 		var optionWidth = 100 / options.length;
 		options.css({
@@ -17,6 +19,21 @@ app = {
 		});
 
 		$(".alert.temporary").fadeOut(10000);
+	},
+
+	primeHoverTools: function() {
+		var favoriteIcons = $('.favorite-icon');
+		var closetIcons = $('.closet-icon');
+
+		favoriteIcons.unbind('click');
+		favoriteIcons.click(function() {
+			app.objects.ajax.toggleFavorite($(this).data("id"), $(this).data("type"));
+		});
+
+		closetIcons.unbind('click');
+		closetIcons.click(function() {
+			app.objects.ajax.toggleClosetItem($(this).data("id"));
+		});
 	},
 
 	primeDropdown: function() {
@@ -108,27 +125,91 @@ app = {
 					dataType: 'html',
 					success: function(data) {
 						app.objects.add(data, containerClass);
+						app.primeHoverTools();
+					}
+				});
+			},
+
+			toggleFavorite: function(id, type) {
+				$.ajax({
+					dataType: "json",
+					data: {id: id, type: type},
+					type: "post",
+					url: "/items/favorites/toggle",
+					success: function(data) {
+						if (data.success) {
+							var icon = $('*[data-id="' + id + '"].favorite-icon');
+							var count = $('*[data-id="' + id + '"].favorite-icon + .count');
+
+							if (data.action == "deleted") {
+								icon.removeClass('red');
+								count.text((Number(count.text()) - 1).toString());
+							} else {
+								icon.addClass('red');
+								count.text((Number(count.text()) + 1).toString());
+							}
+						} else if (data.code == '0') {
+							window.location = "/user/registration";
+						} else {
+							alert("Error " + data.code + ": " + data.message);
+						}
+					}
+				});
+			},
+
+			toggleClosetItem: function(id, amount) {
+				amount = typeof amount !== 'undefined' ? amount : 1;
+				$.ajax({
+					dataType: "json",
+					data: {id: id, amount: amount},
+					type: "post",
+					url: "/closets/default/toggle",
+					success: function(data) {
+						if (data.success) {
+							var icon = $('*[data-id="' + id + '"].closet-icon');
+							var count = $('*[data-id="' + id + '"].closet-icon + .count');
+
+							if (data.action == "deleted") {
+								icon.text('plus');
+								icon.removeClass('green');
+								count.text((Number(count.text()) - 1).toString());
+							} else {
+								icon.text('check');
+								icon.addClass('green');
+								count.text((Number(count.text()) + 1).toString());
+							}
+						} else if (data.code == '0') {
+							window.location = "/user/registration";
+						} else {
+							alert("Error " + data.code + ": " + data.message);
+						}
 					}
 				});
 			}
 		},
 	},
 
-	go: function() {
+	init: function() {
 		this.initializeGrid();
-		this.primeOptionBar();
+		this.resizeOptionBars();
 		this.primeAlertClose();
 		this.primeDropdown();
 		this.primePopup();
+		this.primeHoverTools();
 	}
 };
 
 $(function() {
-	app.go();
+	app.init();
 
 	$(window).scroll(function() {
 		 if($(window).scrollTop() + $(window).height() == $(document).height()) {
 			app.objects.ajax.getItems();
+			app.objects.filterByString($('.navbar-search').val());
 		 }
+	});
+
+	$('.navbar-search').on('input', function() {
+		app.objects.filterByString($(this).val());
 	});
 });
