@@ -91,20 +91,24 @@ app = {
 		},
 
 		ajax: {
-			getItems: function(filters, containerClass) {
+			getItems: function(amount, filters, containerClass) {
+				amount = typeof amount !== 'undefined' ? amount : 20;
 				filters = typeof filters !== 'undefined' ? filters : {};
 				containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
-
-				var filterString = "";
-				for (var filterType in filters) {
-					filterString += "filters[" + filterType + "]=" + filters[filterType] + "&";
-				}
+				var itemsOnPage = $(containerClass).find(".hover-view").length;
 
 				$.ajax({
-					data: "ajax=true&" + filterString,
-					url: "/items"
-				}).done(function(data) {
+					data: decodeURIComponent($.param({
+						ajax: true,
+						itemsOnPage: itemsOnPage,
+						filters: filters,
+						amount: amount,
+					})),
+					url: "/items",
+					dataType: 'html',
+					success: function(data) {
 						app.objects.add(data, containerClass);
+					}
 				});
 			}
 		},
@@ -122,7 +126,9 @@ app = {
 $(function() {
 	app.go();
 
-	$('#getitems').click(function() {
-		app.objects.ajax.getItems();
+	$(window).scroll(function() {
+		 if($(window).scrollTop() + $(window).height() == $(document).height()) {
+			app.objects.ajax.getItems();
+		 }
 	});
 });
