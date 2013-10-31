@@ -8,8 +8,8 @@ app = {
 		var options = $(".option-bar li");
 		var optionWidth = 100 / options.length;
 		options.css({
-			width: optionWidth - 0.40 + "%",
-			"font-size": (-1 / 150 * Math.pow(options.length - 1, 2) + 1) + "rem"
+			width: optionWidth - 0.4 + "%",
+			"font-size": (-1 / 200 * Math.pow(options.length - 1, 2) + 1) + "rem"
 		});
 	},
 

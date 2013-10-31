@@ -1,45 +1,35 @@
 .button {
 	display: inline-block;
-	padding: 7px 15px;
-	border: 1px solid #DDD;
-	border-bottom-color: #C5C5C5;
-	border-radius: 3px;
+	font-size: 1rem;
+	border-radius: 4px;
 	background-color: $light-grey;
-	background-repeat: repeat-x;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-	color: #222;
+	color: $base;
+	box-shadow: 0px 3px darken($light-grey, 10%);
+	padding: 10px 20px;
+	outline: none;
+	white-space: nowrap;
 	vertical-align: middle;
 	text-align: center;
-	white-space: nowrap;
-	cursor: pointer;
-	font-family: inherit;
-	font-weight: normal;
 	-webkit-appearance: none;
+	-moz-transition: all 100ms ease-in-out;
+	-ms-transition: all 100ms ease-in-out;
+	-o-transition: all 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
 
 	&:hover {
-		border-color: #CCC #CCC #B5B5B5;
-		background-color: #DADADA;
-	}
-
-	&:active {
-		border-color: #B5B5B5;
-		background-color: #DADADA;
-		box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.15);
+		background-color: darken($light-grey, 10%);
+		box-shadow: 0px 3px darken($light-grey, 20%);
 	}
 
 	&.primary {
-		border-color: $dark-green;
-		background-color: $green;
 		color: #FFF;
+		background-color: $green;
+		box-shadow: 0px 3px darken($green, 10%);
+		text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 
 		&:hover {
-			border-color: #4A993E;
-			background-color: $dark-green;
-		}
-
-		&:active {
-			border-color: #418737;
-			background-color: $dark-green;
+			background-color: darken($green, 10%);
+			box-shadow: 0px 3px darken($green, 20%);
 		}
 	}
 
@@ -47,20 +37,21 @@
 		color: $red;
 
 		&:hover {
-			border-color: $dark-red;
-			background-color: $red;
 			color: #FFF;
+			background-color: $red;
+			box-shadow: 0px 3px darken($red, 20%);
 		}
 	}
 
 	&.dark {
-		border-color: $very-dark-blue;
-		background-color: $dark-blue;
 		color: #FFF;
+		background-color: $dark-blue;
+		box-shadow: 0px 3px darken($dark-blue, 10%);
+		text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 
 		&:hover {
-			border-color: #333;
-			background-color: $very-dark-blue;
+			background-color: darken($dark-blue, 10%);
+			box-shadow: 0px 3px darken($dark-blue, 20%);
 		}
 	}
 
@@ -73,7 +64,6 @@
 
 	&.big {
 		padding: 10px 20px;
-		border-radius: 4px;
 		font-size: 1.25rem;
 	}
 }
