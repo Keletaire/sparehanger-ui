@@ -1,7 +1,11 @@
 app = {
 
-	settings: {
+	settings: {},
 
+	addListenerToSearchBar: function() {
+		$('.navbar-search').on('input', function() {
+			app.hoverviews.filterByString($(this).val());
+		});
 	},
 
 	resizeOptionBars: function() {
@@ -13,7 +17,7 @@ app = {
 		});
 	},
 
-	primeAlertClose: function() {
+	addListenerToAlertClose: function() {
 		$(".alert .close").click(function() {
 			$(this).parents(".alert").hide();
 		});
@@ -21,22 +25,22 @@ app = {
 		$(".alert.temporary").fadeOut(10000);
 	},
 
-	primeHoverTools: function() {
+	addListenerToHoverTools: function() {
 		var favoriteIcons = $('.favorite-icon');
 		var closetIcons = $('.closet-icon');
 
 		favoriteIcons.unbind('click');
 		favoriteIcons.click(function() {
-			app.objects.ajax.toggleFavorite($(this).data("id"), $(this).data("type"));
+			app.hoverviews.ajax.toggleFavorite($(this).data("id"), $(this).data("type"));
 		});
 
 		closetIcons.unbind('click');
 		closetIcons.click(function() {
-			app.objects.ajax.toggleClosetItem($(this).data("id"));
+			app.hoverviews.ajax.toggleClosetItem($(this).data("id"));
 		});
 	},
 
-	primeDropdown: function() {
+	addListenerToDropdowns: function() {
 		$(".dropdown-toggle").click(function() {
 			var list = $(".dropdown-list", $(this).parent());
 			list.addClass('active');
@@ -58,7 +62,7 @@ app = {
 		});
 	},
 
-	primePopup: function() {
+	addListenerToPopups: function() {
 		$('.popup-toggle').click(function() {
 			$($(this).attr('href')).addClass('active');
 		});
@@ -74,7 +78,7 @@ app = {
 		});
 	},
 
-	objects: {
+	hoverviews: {
 		filterByString: function(filter, containerClass) {
 			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
 			var container = $(containerClass);
@@ -108,7 +112,7 @@ app = {
 		},
 
 		ajax: {
-			getItems: function(amount, filters, containerClass) {
+			getItems: function(filters, amount, containerClass) {
 				amount = typeof amount !== 'undefined' ? amount : 20;
 				filters = typeof filters !== 'undefined' ? filters : {};
 				containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
@@ -119,13 +123,13 @@ app = {
 						ajax: true,
 						itemsOnPage: itemsOnPage,
 						filters: filters,
-						amount: amount,
+						amount: amount
 					})),
 					url: "/items",
 					dataType: 'html',
 					success: function(data) {
-						app.objects.add(data, containerClass);
-						app.primeHoverTools();
+						app.hoverviews.add(data, containerClass);
+						app.addListenerToHoverTools();
 					}
 				});
 			},
@@ -186,30 +190,18 @@ app = {
 					}
 				});
 			}
-		},
+		}
 	},
 
 	init: function() {
 		this.initializeGrid();
 		this.resizeOptionBars();
-		this.primeAlertClose();
-		this.primeDropdown();
-		this.primePopup();
-		this.primeHoverTools();
+		this.addListenerToAlertClose();
+		this.addListenerToDropdowns();
+		this.addListenerToPopups();
+		this.addListenerToHoverTools();
+		this.addListenerToSearchBar();
 	}
 };
 
-$(function() {
-	app.init();
-
-	$(window).scroll(function() {
-		 if($(window).scrollTop() + $(window).height() == $(document).height()) {
-			app.objects.ajax.getItems();
-			app.objects.filterByString($('.navbar-search').val());
-		 }
-	});
-
-	$('.navbar-search').on('input', function() {
-		app.objects.filterByString($(this).val());
-	});
-});
+$(function() { app.init(); });
