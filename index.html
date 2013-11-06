@@ -614,7 +614,7 @@ $(function() {
 	app.hoverviews.filterByClasses([&quot;.red&quot;, &quot;.green&quot;], containerClass);
 
 	// Directly adding objects to the container
-	app.hoverviews.add($(&quot;&lt;div class='hover-view'&gt;...&lt;/div&gt;&quot;, containerClass));
+	app.hoverviews.add($(&quot;&lt;div class='hover-view'&gt;...&lt;/div&gt;&quot;), containerClass);
 
 	// Make an ajax call to add a number of items to the page
 	app.hoverviews.ajax.getItems(amount, {category_one_id: 2}, containerClass);
@@ -686,12 +686,12 @@ $(function() {
 					</div>
 					<pre><code>
 &lt;div class=&quot;dropdown&quot;&gt;
-&lt;a class=&quot;dropdown-toggle button&quot;&gt;Privacy &lt;i class=&quot;ss-icon&quot;&gt; dropdown&lt;/i&gt;&lt;/a&gt;
-&lt;ul class=&quot;dropdown-list&quot;&gt;
-	&lt;li&gt;&lt;a href=&quot;&quot;&gt;Item One&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;&quot;&gt;Item Two&lt;/a&gt;&lt;/li&gt;
-	...
-&lt;/ul&gt;
+	&lt;a class=&quot;dropdown-toggle button&quot;&gt;Privacy &lt;i class=&quot;ss-icon&quot;&gt; dropdown&lt;/i&gt;&lt;/a&gt;
+	&lt;ul class=&quot;dropdown-list&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;&quot;&gt;Item One&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;&quot;&gt;Item Two&lt;/a&gt;&lt;/li&gt;
+		...
+	&lt;/ul&gt;
 &lt;/div&gt;
 					</code></pre>
 					<p>
