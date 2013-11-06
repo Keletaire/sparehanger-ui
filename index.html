@@ -456,10 +456,7 @@
 )); ?&gt;
 					</code></pre>
 					<p>
-						Hover views are the main way that content gets displayed on Spare Hanger. An image is displayed which, when hovered over, reveals information about the object. Hover views work perfectly with <a href="http://isotope.metafizzy.co/">Isotope</a>.
-					</p>
-					<p>
-						Note that in order for a hover view to display correctly, its width and height must be the same as the width and height of the image.
+						Hover views are the main way that content gets displayed on Spare Hanger. An image is displayed which, when hovered over, reveals information about the object.
 					</p>
 					<h4>When should you use a hover view?</h4>
 					<ul>
@@ -611,16 +608,16 @@ $(function() {
 	// containerClass is optional for all methods, defaults to &quot;.objects&quot;
 
 	// Filter objects by a single string, i.e. searching
-	app.objects.filterByString(&quot;red&quot;, containerClass);
+	app.hoverviews.filterByString(&quot;red&quot;, containerClass);
 
 	// Filter objects by multiple classes, i.e. sorting by categories
-	app.objects.filterByClasses([&quot;.red&quot;, &quot;.green&quot;], containerClass);
+	app.hoverviews.filterByClasses([&quot;.red&quot;, &quot;.green&quot;], containerClass);
 
 	// Directly adding objects to the container
-	app.objects.add($(&quot;&lt;div class='hover-view'&gt;...&lt;/div&gt;&quot;, containerClass));
+	app.hoverviews.add($(&quot;&lt;div class='hover-view'&gt;...&lt;/div&gt;&quot;, containerClass));
 
 	// Make an ajax call to add a number of items to the page
-	app.objects.ajax.getItems(amount, {category_one_id: 2}, containerClass);
+	app.hoverviews.ajax.getItems(amount, {category_one_id: 2}, containerClass);
 });
 					</code></pre>
 				</div>
