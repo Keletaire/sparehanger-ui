@@ -1,21 +1,21 @@
-.hover-view {
+.ui-hover-view {
 	display: inline-block;
 	margin: 10px;
 
-	&:hover > .hover-content {
+	&:hover > .ui-hover-content {
 		opacity: 1;
 	}
 
-	&:hover > .hover-tools {
+	&:hover > .ui-hover-tools {
 		opacity: 1;
 	}
 
-	.hover-img {
+	.ui-hover-img {
 		opacity: 1;
 		-webkit-transition: opacity .05s linear;
 	}
 
-	.hover-content {
+	.ui-hover-content {
 		position: absolute;
 		top: 0;
 		bottom: 30px;
@@ -38,7 +38,7 @@
 		}
 	}
 
-	.hover-tools {
+	.ui-hover-tools {
 		position: absolute;
 		top: 85%;
 		bottom: 0;
@@ -57,7 +57,7 @@
 		a { color: #333 };
 	}
 
-	.count {
+	.ui-count {
 		margin-left: 2px;
 		color: #555;
 		font-size: .75rem;

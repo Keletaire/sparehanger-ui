@@ -15,7 +15,7 @@ $very-light-grey: lighten($light-grey, 5%);
 
 $filter-color-key: #C69;
 
-* {
+[class*='ui-'] {
 	position: relative;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
@@ -24,7 +24,7 @@ $filter-color-key: #C69;
 	padding: 0;
 }
 
-.wrap {
+.ui-wrap {
 	margin: 100px auto;
 	padding: 0 26px;
 	padding: 0 1.4rem;

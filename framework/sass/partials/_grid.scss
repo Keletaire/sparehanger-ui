@@ -1,4 +1,4 @@
-.row { 
+.ui-row { 
 	display: block;
 	margin: 30px 0;
 
@@ -13,7 +13,7 @@
 	}
 }
 
-[class*='column-'] {
+[class*='ui-column-'] {
 	display: inline-block;
 	float: left;
 
@@ -25,7 +25,7 @@
 	}
 }
 
-.center { margin: 0 auto; }
-.pull-right { float: right; }
-.inline { display: inline; }
+.ui-center { margin: 0 auto; }
+.ui-pull-right { float: right; }
+.ui-inline { display: inline; }
 

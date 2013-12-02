@@ -3,13 +3,13 @@ app = {
 	settings: {},
 
 	addListenerToSearchBar: function() {
-		$('.navbar-search').on('input', function() {
+		$('.ui-navbar-search').on('input', function() {
 			app.hoverviews.filterByString($(this).val());
 		});
 	},
 
 	resizeOptionBars: function() {
-		var options = $(".option-bar li");
+		var options = $(".ui-option-bar li");
 		var optionWidth = 100 / options.length;
 		options.css({
 			width: optionWidth - 0.40 + "%",
@@ -18,11 +18,11 @@ app = {
 	},
 
 	addListenerToAlertClose: function() {
-		$(".alert .close").click(function() {
+		$(".ui-alert .ui-close").click(function() {
 			$(this).parents(".alert").hide();
 		});
 
-		$(".alert.temporary").fadeOut(10000);
+		$(".ui-alert.ui-temporary").fadeOut(10000);
 	},
 
 	addListenerToHoverTools: function() {
@@ -41,9 +41,9 @@ app = {
 	},
 
 	addListenerToDropdowns: function() {
-		$(".dropdown-toggle").click(function() {
-			var list = $(".dropdown-list", $(this).parent());
-			list.addClass('active');
+		$(".ui-dropdown-toggle").click(function() {
+			var list = $(".ui-dropdown-list", $(this).parent());
+			list.addClass('ui-active');
 			if (list.position().left < 150) {
 				list.css("left", "-150px");
 			}
@@ -51,10 +51,10 @@ app = {
 		});
 
 		$(document).on('click', function(e) {
-			if ($(e.target).hasClass('dropdown-list') || $(e.target).hasClass('dropdown-toggle') || $(e.target).parent().hasClass('dropdown-toggle')) {
+			if ($(e.target).hasClass('ui-dropdown-list') || $(e.target).hasClass('ui-dropdown-toggle') || $(e.target).parent().hasClass('ui-dropdown-toggle')) {
 				return;
 			}
-			var dropdowns = $('.dropdown-list.active');
+			var dropdowns = $('.ui-dropdown-list.ui-active');
 			if (dropdowns.length > 0) {
 				dropdowns.removeClass('active');
 				dropdowns.hide();
@@ -63,16 +63,16 @@ app = {
 	},
 
 	addListenerToPopups: function() {
-		$('.popup-toggle').click(function() {
-			$($(this).attr('href')).addClass('active');
+		$('.ui-popup-toggle').click(function() {
+			$($(this).attr('href')).addClass('ui-active');
 		});
-		$('.popup-content .close').click(function() {
-			$(this).parents('.popup-content').removeClass('active');
+		$('.ui-popup-content .ui-close').click(function() {
+			$(this).parents('.ui-popup-content').removeClass('ui-active');
 		});
 	},
 
 	initializeGrid: function() {
-		$("[class*='column-']").each(function() {
+		$("[class*='ui-column-']").each(function() {
 			var percent = $(this).attr("class").match(/\d+/g);
 			$(this).css("width", percent + "%");
 		});
@@ -82,9 +82,9 @@ app = {
 		filterByString: function(filter, containerClass) {
 			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
 			var container = $(containerClass);
-			container.find(".hover-view").show();
+			container.find(".ui-hover-view").show();
 			if (filter.length > 0) {
-				var unwantedObjects = container.find(".hover-view:not([data-index*='" + filter + "'])");
+				var unwantedObjects = container.find(".ui-hover-view:not([data-index*='" + filter + "'])");
 				unwantedObjects.hide();
 			}
 		},
@@ -97,9 +97,9 @@ app = {
 				filter += (i + 1 == classNames.length) ? classNames[i] : classNames[i] + ", ";
 			}
 
-			container.find(".hover-view").show();
+			container.find(".ui-hover-view").show();
 			if (filter.length > 0) {
-				var unwantedObjects = container.find(".hover-view:not(" + filter + ")");
+				var unwantedObjects = container.find(".ui-hover-view:not(" + filter + ")");
 				unwantedObjects.hide();
 			}
 		},
@@ -107,8 +107,8 @@ app = {
 		add: function(objects, containerClass) {
 			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
 			var container = $(containerClass);
-			var currentObjects = container.find('.hover-view');
-			container.find(".hover-view:nth-child(" + currentObjects.length + ")").after(objects);
+			var currentObjects = container.find('.ui-hover-view');
+			container.find(".ui-hover-view:nth-child(" + currentObjects.length + ")").after(objects);
 		},
 
 		ajax: {
@@ -116,7 +116,7 @@ app = {
 				amount = typeof amount !== 'undefined' ? amount : 20;
 				filters = typeof filters !== 'undefined' ? filters : {};
 				containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
-				var itemsOnPage = $(containerClass).find(".hover-view").length;
+				var itemsOnPage = $(containerClass).find(".ui-hover-view").length;
 
 				$.ajax({
 					data: decodeURIComponent($.param({

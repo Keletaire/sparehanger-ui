@@ -1,4 +1,4 @@
-.pills {
+.ui-pills {
 	list-style: none;
 
 	li {
@@ -9,7 +9,7 @@
 			background-color: $light-grey;
 		}
 
-		&.active {
+		&.ui-active {
 			background-color: $dark-blue;
 
 			a { color: #FFF; }

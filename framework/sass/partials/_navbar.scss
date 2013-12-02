@@ -1,4 +1,4 @@
-.navbar {
+.ui-navbar {
 	display: block;
 	margin: 30px 0;
 	vertical-align: middle;
@@ -14,7 +14,7 @@
 		content: " ";
 	}
 
-	&.fixed {
+	&.ui-fixed {
 		position: fixed;
 		top: 0px;
 		left: 0px;
@@ -26,13 +26,13 @@
 		z-index: 10000;
 	}
 
-	.navbar-left {
+	.ui-navbar-left {
 		width: 33%;
 		height: 1.3rem;
 		display: inline-block;
 	}
 
-	.navbar-center {
+	.ui-navbar-center {
 		text-align: center;
 		display: inline-block;
 		width: 33%;
@@ -47,7 +47,7 @@
 		}
 	}
 
-	.navbar-right {
+	.ui-navbar-right {
 		display: inline-block;
 		width: 33%;
 		height: 1.3rem;
@@ -57,7 +57,7 @@
 		}
 	}
 
-	.navbar-search {
+	.ui-navbar-search {
 		background: rgba(0, 0, 0, 0);
 		outline: none !important;
 		box-shadow: none !important;
@@ -68,7 +68,7 @@
 		min-height: 1rem !important;
 	}
 
-	.navbar-options {
+	.ui-navbar-options {
 		list-style: none;
 		float: right;
 
@@ -84,7 +84,7 @@
 			}
 		}
 
-		.dropdown-list a {
+		.ui-dropdown-list a {
 			color: $dark-blue !important;
 
 			&:hover {

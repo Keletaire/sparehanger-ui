@@ -1,4 +1,4 @@
-.field {
+.ui-field {
 	margin: 15px 0;
 
 	label {
@@ -64,7 +64,7 @@ input[type='radio'], input[type='checkbox'] {
 	vertical-align: middle;
 }
 
-.required label:before {
+.ui-required label:before {
 	color: $red;
 	content: "* ";
 }
