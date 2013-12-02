@@ -333,6 +333,7 @@ textarea {
     z-index: 3;
     overflow: hidden;
     margin: 0;
+    padding: 0 10px;
     width: 100%;
     background: rgba(255, 255, 255, 0.96);
     color: #222;
