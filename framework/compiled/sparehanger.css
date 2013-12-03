@@ -309,7 +309,7 @@ textarea {
   .ui-hover-view .ui-hover-content {
     position: absolute;
     top: 0;
-    bottom: 30px;
+    bottom: 0;
     left: 0;
     z-index: 3;
     overflow: hidden;
@@ -327,13 +327,12 @@ textarea {
       line-height: 1.1rem; }
   .ui-hover-view .ui-hover-tools {
     position: absolute;
-    top: 85%;
     bottom: 0;
     left: 0;
     z-index: 3;
     overflow: hidden;
     margin: 0;
-    padding: 0 10px;
+    padding: 10px;
     width: 100%;
     background: rgba(255, 255, 255, 0.96);
     color: #222;
