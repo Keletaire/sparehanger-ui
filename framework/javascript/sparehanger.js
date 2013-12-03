@@ -79,6 +79,11 @@ app = {
 	},
 
 	hoverviews: {
+		centerAllObjects: function() {
+			var containers = $('.ui-hover-view').parent();
+			containers.css('text-align', 'center');
+		},
+
 		filterByString: function(filter, containerClass) {
 			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
 			var container = $(containerClass);
@@ -195,6 +200,7 @@ app = {
 
 	init: function() {
 		this.initializeGrid();
+		this.hoverviews.centerAllObjects();
 		this.resizeOptionBars();
 		this.addListenerToAlertClose();
 		this.addListenerToDropdowns();
