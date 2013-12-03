@@ -117,10 +117,12 @@ app = {
 		},
 
 		ajax: {
-			getItems: function(filters, amount, containerClass) {
+			getItems: function(filters, amount, width, containerClass) {
 				amount = typeof amount !== 'undefined' ? amount : 20;
 				filters = typeof filters !== 'undefined' ? filters : {};
 				containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
+				width = typeof width !== 'undefined' ? width : $('.ui-hover-view .ui-hover-img img', containerClass).width();
+
 				var itemsOnPage = $(containerClass).find(".ui-hover-view").length;
 
 				$.ajax({
@@ -128,7 +130,8 @@ app = {
 						ajax: true,
 						itemsOnPage: itemsOnPage,
 						filters: filters,
-						amount: amount
+						amount: amount,
+						width: width
 					})),
 					url: "/items",
 					dataType: 'html',
