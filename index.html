@@ -13,9 +13,21 @@
 		<div class="ui-wrap">
 			<header class="ui-row site-header">
 				<div class="ui-column-100">
-					<h1 class="ui-logo"><a href="">Spare Hanger User Interface Guide</a></h1>
+					<h1 class="logo"><a href="">Spare Hanger User Interface Guide</a></h1>
 				</div>
 			</header>
+			<div class="ui-row">
+				<div class="ui-column-100">
+					<div class="ui-page-title">
+						<h1>What's This?</h1>
+					</div>
+					<p>
+						This is a reference guide to the visual style and elements of <a href="http://sparehanger.com">Spare Hanger</a>. Here you can find which components you should use for a particular feature on the site, or you can just as an overall reference to the way things work on the front end of the site.
+					</p>
+					<p>
+						All classes and styles defined and used on Spare Hanger (and on this guide) are namespaced under <strong>ui</strong>. This means that all elements without a class beginning with <strong>ui-</strong> will be uneffected by the styles defined here.
+					</p>
+
 			<div class="ui-row">
 				<div class="ui-column-100">
 					<div class="ui-page-title">
@@ -24,12 +36,12 @@
 					<p>
 						Spare Hanger uses a grid system based on percentages. For instance, a block-level element such as
 					</p>
-					<pre><code>&lt;div class=&quot;column-100&quot;&gt;</code></pre>
+					<pre><code>&lt;div class=&quot;ui-column-100&quot;&gt;</code></pre>
 					<p>
 						would cover 100% of the width of its parent element. Typical usage of the grid system might look like this:
 					</p>
 					<pre><code>
-&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;ui-row&quot;&gt;
 	&lt;div class=&quot;ui-column-30&quot;&gt;
 		This is a column that is 30% of the width
 	&lt;/div&gt;

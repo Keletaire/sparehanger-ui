@@ -2,12 +2,13 @@ body {
 	margin-bottom: 50px;
 }
 
-.ui-site-header {
+.site-header {
 	height: 60px;
-	border-bottom: 1px solid #eee;
+	margin-bottom: 40px;
+	text-align: center;
 }
 
-.ui-site-header a {
+.site-header a {
 	color: inherit;
 }
 
