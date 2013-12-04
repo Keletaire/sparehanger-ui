@@ -45,17 +45,24 @@ html {
   font: 100%/1.4 "Proxima Nova", "Lato", sans-serif; }
 
 p {
-  padding: 4px 0; }
+  padding: 4px 0;
+  margin: 0; }
 
 a {
   color: #2980b9;
   text-decoration: none;
-  cursor: pointer; }
+  cursor: pointer;
+  margin: 0;
+  padding: 0; }
   a:hover {
     text-decoration: none; }
 
 ul:not([class]) {
   margin-left: 30px; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0; }
 
 h1 {
   font-size: 1.8rem;
@@ -76,16 +83,16 @@ h4 {
 .ss-icon {
   vertical-align: middle; }
 
-.red {
+.ui-red {
   color: #e74c3c !important; }
 
-.green {
+.ui-green {
   color: #2ecc71 !important; }
 
-.blue {
+.ui-blue {
   color: #34495e !important; }
 
-.grey {
+.ui-grey {
   color: #d6d6d6 !important; }
 
 .ui-page-title {
@@ -99,7 +106,7 @@ h4 {
     font-size: 2rem;
     line-height: 28px; }
 
-.ui-button {
+.ui-button, button {
   display: inline-block;
   padding: 7px 15px;
   border: 1px solid #DDD;
@@ -116,42 +123,42 @@ h4 {
   font-family: inherit;
   font-weight: normal;
   -webkit-appearance: none; }
-  .ui-button:hover {
+  .ui-button:hover, button:hover {
     border-color: #CCC #CCC #B5B5B5;
     background-color: #DADADA; }
-  .ui-button:active {
+  .ui-button:active, button:active {
     border-color: #B5B5B5;
     background-color: #DADADA;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.15); }
-  .ui-button.ui-primary {
+  .ui-button.ui-primary, button.ui-primary {
     border-color: #25a25a;
     background-color: #2ecc71;
     color: #FFF; }
-    .ui-button.ui-primary:hover {
+    .ui-button.ui-primary:hover, button.ui-primary:hover {
       border-color: #4A993E;
       background-color: #25a25a; }
-    .ui-button.ui-primary:active {
+    .ui-button.ui-primary:active, button.ui-primary:active {
       border-color: #418737;
       background-color: #25a25a; }
-  .ui-button.ui-dangerous {
+  .ui-button.ui-dangerous, button.ui-dangerous {
     color: #e74c3c; }
-    .ui-button.ui-dangerous:hover {
+    .ui-button.ui-dangerous:hover, button.ui-dangerous:hover {
       border-color: #d62c1a;
       background-color: #e74c3c;
       color: #FFF; }
-  .ui-button.ui-dark {
+  .ui-button.ui-dark, button.ui-dark {
     border-color: #222f3d;
     background-color: #34495e;
     color: #FFF; }
-    .ui-button.ui-dark:hover {
+    .ui-button.ui-dark:hover, button.ui-dark:hover {
       border-color: #333;
       background-color: #222f3d; }
-  .ui-button.ui-small {
+  .ui-button.ui-small, button.ui-small {
     padding: 4px 6px;
     border-radius: 2px;
     font-size: .7rem;
     font-weight: bold; }
-  .ui-button.ui-big {
+  .ui-button.ui-big, button.ui-big {
     padding: 10px 20px;
     border-radius: 4px;
     font-size: 1.25rem; }
@@ -178,7 +185,7 @@ input[type='text'], input[type='url'], input[type='email'], input[type='password
   border-radius: 3px;
   box-shadow: inset 0 1px 2px #CCC;
   font-weight: normal;
-  font-size: 13px;
+  font-size: inherit;
   transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
@@ -259,7 +266,7 @@ textarea {
     margin-right: 10px;
     min-width: 150px;
     height: 150px; }
-    .album-uploader .image-preview .button, .album-uploader .image-preview button {
+    .album-uploader .image-preview .button {
       display: block;
       opacity: 0.8; }
 
@@ -332,12 +339,11 @@ textarea {
     z-index: 3;
     overflow: hidden;
     margin: 0;
-    padding: 10px;
+    padding: 5px 10px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.96);
     color: #222;
     text-decoration: none;
-    text-align: right;
+    text-align: left;
     font-size: 1rem;
     opacity: 0;
     -webkit-transition: opacity .1s linear; }
@@ -355,7 +361,7 @@ textarea {
   .ui-option-bar li {
     display: inline-block;
     height: 40px; }
-    .ui-option-bar li .ui-button {
+    .ui-option-bar li .ui-button, .ui-option-bar li button {
       width: 100%; }
 
 .ui-dropdown .ui-dropdown-list {

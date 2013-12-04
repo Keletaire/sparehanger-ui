@@ -2,30 +2,30 @@ body {
 	margin-bottom: 50px;
 }
 
-.site-header {
+.ui-site-header {
 	height: 60px;
 	border-bottom: 1px solid #eee;
 }
 
-.site-header a {
+.ui-site-header a {
 	color: inherit;
 }
 
-.alert {
+.ui-alert {
 	margin: 5px;
 }
 
-[class*="column-"] > p {
+[class*="ui-column-"] > p {
 	width: 65%;
 }
 
-ul:not(.option-bar) {
+ul:not(.ui-option-bar) {
 	margin-left: 30px;
 }
 
-.box { margin: 5px; }
+.ui-box { margin: 5px; }
 
-.color-bubble {
+.ui-color-bubble {
 	height: 100px;
 	border-radius: 10px;
 	margin-bottom: 15px;

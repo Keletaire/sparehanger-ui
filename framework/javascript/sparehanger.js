@@ -1,6 +1,8 @@
 app = {
 
-	settings: {},
+	settings: {
+		isLoading: false
+	},
 
 	addListenerToSearchBar: function() {
 		$('.ui-navbar-search').on('input', function() {
@@ -117,29 +119,39 @@ app = {
 		},
 
 		ajax: {
-			getItems: function(filters, amount, width, containerClass) {
-				amount = typeof amount !== 'undefined' ? amount : 20;
-				filters = typeof filters !== 'undefined' ? filters : {};
-				containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
-				width = typeof width !== 'undefined' ? width : $('.ui-hover-view .ui-hover-img img', containerClass).width();
-
-				var itemsOnPage = $(containerClass).find(".ui-hover-view").length;
-
-				$.ajax({
-					data: decodeURIComponent($.param({
-						ajax: true,
-						itemsOnPage: itemsOnPage,
-						filters: filters,
-						amount: amount,
-						width: width
-					})),
-					url: "/items",
-					dataType: 'html',
-					success: function(data) {
-						app.hoverviews.add(data, containerClass);
-						app.addListenerToHoverTools();
+			getItems: function(filters, amount, sortBy, imageWidth, containerClass) {
+				console.log('isLoading:' + app.settings.isLoading);
+				if (!app.settings.isLoading) {
+					app.settings.isLoading = true;
+					amount = typeof amount !== 'undefined' ? amount : 20;
+					filters = typeof filters !== 'undefined' ? filters : {};
+					sortBy = typeof sortBy !== 'undefined' ? sortBy : "none";
+					containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
+					imageWidth = typeof imageWidth !== 'undefined' ? imageWidth : $('.ui-hover-view .ui-hover-img img', containerClass).width();
+					if (sortBy == "none" && document.URL.match(/trending|best|new/i)) {
+						sortBy = document.URL.match(/trending|best|new/i)[0];
 					}
-				});
+
+					var itemsOnPage = $(containerClass).find(".ui-hover-view").length;
+
+					$.ajax({
+						data: decodeURIComponent($.param({
+							ajax: true,
+							itemsOnPage: itemsOnPage,
+							filters: filters,
+							amount: amount,
+							width: imageWidth,
+							sortby: sortBy
+						})),
+						url: "/items",
+						dataType: 'html',
+						success: function(data) {
+							app.hoverviews.add(data, containerClass);
+							app.addListenerToHoverTools();
+							app.settings.isLoading = false;
+						}
+					});
+				}
 			},
 
 			toggleFavorite: function(id, type) {

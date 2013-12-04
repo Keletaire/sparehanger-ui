@@ -5,12 +5,15 @@ html {
 
 p {
 	padding: 4px 0;
+	margin: 0;
 }
 
 a {
 	color: $blue;
 	text-decoration: none;
 	cursor: pointer;
+	margin: 0;
+	padding: 0;
 
 	&:hover {
 		text-decoration: none;
@@ -19,6 +22,11 @@ a {
 
 ul:not([class]) {
 	margin-left: 30px;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
 }
 
 h1 {
@@ -31,7 +39,6 @@ h2 {
 	line-height: 1.7;
 }
 
-
 h3 {
 	font-size: 1.3rem;
 	line-height: 1.7;
@@ -43,7 +50,7 @@ h4 {
 }
 
 .ss-icon { vertical-align: middle; }
-.red   { color: $red !important;}
-.green { color: $green !important; }
-.blue  { color: $dark-blue !important; }
-.grey  { color: $dark-grey !important; }
+.ui-red   { color: $red !important;}
+.ui-green { color: $green !important; }
+.ui-blue  { color: $dark-blue !important; }
+.ui-grey  { color: $dark-grey !important; }
