@@ -33,12 +33,12 @@ app = {
 
 		favoriteIcons.unbind('click');
 		favoriteIcons.click(function() {
-			app.hoverviews.ajax.toggleFavorite($(this).data("id"), $(this).data("type"));
+			app.ajax.toggleFavorite($(this).data("id"), $(this).data("type"));
 		});
 
 		closetIcons.unbind('click');
 		closetIcons.click(function() {
-			app.hoverviews.ajax.toggleClosetItem($(this).data("id"));
+			app.ajax.toggleClosetItem($(this).data("id"));
 		});
 	},
 
@@ -80,6 +80,14 @@ app = {
 		});
 	},
 
+	infiniteScroll: function(callback) {
+		$(window).scroll(function() {
+			 if($(window).scrollTop() + $(window).height() == $(document).height()) {
+		 		callback();
+			 }
+		});
+	},
+
 	hoverviews: {
 		centerAllObjects: function() {
 			var containers = $('.ui-hover-view').parent();
@@ -98,7 +106,7 @@ app = {
 
 		filterByClasses: function(classNames, containerClass) {
 			containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
-			var container = $(containerClass);	
+			var container = $(containerClass);
 			var filter = "";
 			for (var i = 0; i < classNames.length; i++) {
 				filter += (i + 1 == classNames.length) ? classNames[i] : classNames[i] + ", ";
@@ -116,100 +124,98 @@ app = {
 			var container = $(containerClass);
 			var currentObjects = container.find('.ui-hover-view');
 			container.find(".ui-hover-view:nth-child(" + currentObjects.length + ")").after(objects);
-		},
+		}
+	},
 
-		ajax: {
-			getItems: function(filters, amount, sortBy, imageWidth, containerClass) {
-				console.log('isLoading:' + app.settings.isLoading);
-				if (!app.settings.isLoading) {
-					app.settings.isLoading = true;
-					amount = typeof amount !== 'undefined' ? amount : 20;
-					filters = typeof filters !== 'undefined' ? filters : {};
-					sortBy = typeof sortBy !== 'undefined' ? sortBy : "none";
-					containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
-					imageWidth = typeof imageWidth !== 'undefined' ? imageWidth : $('.ui-hover-view .ui-hover-img img', containerClass).width();
-					if (sortBy == "none" && document.URL.match(/trending|best|new/i)) {
-						sortBy = document.URL.match(/trending|best|new/i)[0];
-					}
-
-					var itemsOnPage = $(containerClass).find(".ui-hover-view").length;
-
-					$.ajax({
-						data: decodeURIComponent($.param({
-							ajax: true,
-							itemsOnPage: itemsOnPage,
-							filters: filters,
-							amount: amount,
-							width: imageWidth,
-							sortby: sortBy
-						})),
-						url: "/items",
-						dataType: 'html',
-						success: function(data) {
-							app.hoverviews.add(data, containerClass);
-							app.addListenerToHoverTools();
-							app.settings.isLoading = false;
-						}
-					});
+	ajax: {
+		items: function(attributes, amount, sortBy, imageWidth, containerClass) {
+			console.log('isLoading:' + app.settings.isLoading);
+			if (!app.settings.isLoading) {
+				app.settings.isLoading = true;
+				amount = typeof amount !== 'undefined' ? amount : 20;
+				attributes = typeof attributes !== 'undefined' ? attributes : {};
+				sortBy = typeof sortBy !== 'undefined' ? sortBy : "none";
+				containerClass = typeof containerClass !== 'undefined' ? containerClass : ".objects";
+				imageWidth = typeof imageWidth !== 'undefined' ? imageWidth : $('.ui-hover-view .ui-hover-img img', containerClass).width();
+				if (sortBy == "none" && document.URL.match(/trending|best|new/i)) {
+					sortBy = document.URL.match(/trending|best|new/i)[0];
 				}
-			},
+				var itemsOnPage = $(".ui-hover-view", containerClass).length;
 
-			toggleFavorite: function(id, type) {
 				$.ajax({
-					dataType: "json",
-					data: {id: id, type: type},
-					type: "post",
-					url: "/items/favorites/toggle",
+					data: decodeURIComponent($.param({
+						itemsOnPage: itemsOnPage,
+						attributes: attributes,
+						amount: amount,
+						width: imageWidth,
+						sortby: sortBy
+					})),
+					url: "/ajax/items",
+					dataType: 'html',
 					success: function(data) {
-						if (data.success) {
-							var icon = $('*[data-id="' + id + '"].favorite-icon');
-							var count = $('*[data-id="' + id + '"].favorite-icon + .count');
-
-							if (data.action == "deleted") {
-								icon.removeClass('red');
-								count.text((Number(count.text()) - 1).toString());
-							} else {
-								icon.addClass('red');
-								count.text((Number(count.text()) + 1).toString());
-							}
-						} else if (data.code == '0') {
-							window.location = "/user/registration";
-						} else {
-							alert("Error " + data.code + ": " + data.message);
-						}
-					}
-				});
-			},
-
-			toggleClosetItem: function(id, amount) {
-				amount = typeof amount !== 'undefined' ? amount : 1;
-				$.ajax({
-					dataType: "json",
-					data: {id: id, amount: amount},
-					type: "post",
-					url: "/closets/default/toggle",
-					success: function(data) {
-						if (data.success) {
-							var icon = $('*[data-id="' + id + '"].closet-icon');
-							var count = $('*[data-id="' + id + '"].closet-icon + .count');
-
-							if (data.action == "deleted") {
-								icon.text('plus');
-								icon.removeClass('green');
-								count.text((Number(count.text()) - 1).toString());
-							} else {
-								icon.text('check');
-								icon.addClass('green');
-								count.text((Number(count.text()) + 1).toString());
-							}
-						} else if (data.code == '0') {
-							window.location = "/user/registration";
-						} else {
-							alert("Error " + data.code + ": " + data.message);
-						}
+						app.hoverviews.add(data, containerClass);
+						app.addListenerToHoverTools();
+						app.settings.isLoading = false;
 					}
 				});
 			}
+		},
+
+		toggleFavorite: function(id, type) {
+			$.ajax({
+				dataType: "json",
+				data: {id: id, type: type},
+				type: "post",
+				url: "/items/favorites/toggle",
+				success: function(data) {
+					if (data.success) {
+						var icon = $('*[data-id="' + id + '"].favorite-icon');
+						var count = $('*[data-id="' + id + '"].favorite-icon + .count');
+
+						if (data.action == "deleted") {
+							icon.removeClass('ui-red');
+							count.text((Number(count.text()) - 1).toString());
+						} else {
+							icon.addClass('ui-red');
+							count.text((Number(count.text()) + 1).toString());
+						}
+					} else if (data.code == '0') {
+						window.location = "/user/registration";
+					} else {
+						alert("Error " + data.code + ": " + data.message);
+					}
+				}
+			});
+		},
+
+		toggleClosetItem: function(id, amount) {
+			amount = typeof amount !== 'undefined' ? amount : 1;
+			$.ajax({
+				dataType: "json",
+				data: {id: id, amount: amount},
+				type: "post",
+				url: "/closets/default/toggle",
+				success: function(data) {
+					if (data.success) {
+						var icon = $('*[data-id="' + id + '"].closet-icon');
+						var count = $('*[data-id="' + id + '"].closet-icon + .count');
+
+						if (data.action == "deleted") {
+							icon.text('plus');
+							icon.removeClass('ui-green');
+							count.text((Number(count.text()) - 1).toString());
+						} else {
+							icon.text('check');
+							icon.addClass('ui-green');
+							count.text((Number(count.text()) + 1).toString());
+						}
+					} else if (data.code == '0') {
+						window.location = "/user/registration";
+					} else {
+						alert("Error " + data.code + ": " + data.message);
+					}
+				}
+			});
 		}
 	},
 
