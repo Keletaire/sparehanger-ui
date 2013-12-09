@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>sparehanger.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="jquery.isotope.min.html">
+                jquery.isotope.min.js
+              </a>
+            
+              
+              <a class="source" href="ss-standard.html">
+                ss-standard.js
+              </a>
+            
+              
+              <a class="source" href="sparehanger.html">
+                sparehanger.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>sparehanger.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>The base <code>app</code> object, created in the global namespace.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>app = {
+
+	settings: {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>When this is set to true, we are waiting for an ajax response.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		isLoading: <span class="literal">false</span>
+	},
+
+	addListenerToSearchBar: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+		$(<span class="string">'.ui-navbar-search'</span>).on(<span class="string">'input'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+			app.hoverviews.filterByString($(<span class="keyword">this</span>).val());
+		});
+	},</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Option bars&#39; options are sized proportinally to how many there are.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	resizeOptionBars: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+		<span class="keyword">var</span> options = $(<span class="string">".ui-option-bar li"</span>);
+		<span class="keyword">var</span> optionWidth = <span class="number">100</span> / options.length;
+		options.css({
+			width: optionWidth - <span class="number">0.40</span> + <span class="string">"%"</span>,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Font size is determined by a downward shaping parabola with vertex
+(1 option, 1rem).</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="string">"font-size"</span>: (-<span class="number">1</span> / <span class="number">150</span> * Math.pow(options.length - <span class="number">1</span>, <span class="number">2</span>) + <span class="number">1</span>) + <span class="string">"rem"</span>
+		});
+	},
+
+	addListenerToAlertClose: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+		$(<span class="string">".ui-alert .ui-close"</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+			$(<span class="keyword">this</span>).parents(<span class="string">".alert"</span>).hide();
+		});
+
+		$(<span class="string">".ui-alert.ui-temporary"</span>).fadeOut(<span class="number">10000</span>);
+	},
+
+	addListenerToHoverTools: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+		<span class="keyword">var</span> favoriteIcons = $(<span class="string">'.favorite-icon'</span>);
+		<span class="keyword">var</span> closetIcons = $(<span class="string">'.closet-icon'</span>);
+
+		favoriteIcons.click(<span class="function"><span class="keyword">function</span><span class="params">(event)</span> {</span>
+			event.preventDefault();
+			app.ajax.toggleFavorite($(<span class="keyword">this</span>).data(<span class="string">"id"</span>), $(<span class="keyword">this</span>).data(<span class="string">"type"</span>));
+		});
+
+		closetIcons.unbind(<span class="string">'click'</span>);
+		closetIcons.click(<span class="function"><span class="keyword">function</span><span class="params">(event)</span> {</span>
+			event.preventDefault();
+			app.ajax.toggleClosetItem($(<span class="keyword">this</span>).data(<span class="string">"id"</span>));
+		});
+	},
+
+	addListenerToDropdowns: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+		$(<span class="string">".ui-dropdown-toggle"</span>).click(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>The dropdown list in the same container as this.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">var</span> list = $(<span class="string">".ui-dropdown-list"</span>, $(<span class="keyword">this</span>).parent());
+			list.addClass(<span class="string">'ui-active'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>A crappy attemppt at trying to figure out how to align the dropdown options
+based on where they are on the screen.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (list.position().left &lt; <span class="number">150</span>) {
+				list.css(<span class="string">"left"</span>, <span class="string">"-150px"</span>);
+			}
+			list.show();
+		});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>On any click whatsoever..</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		$(document).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>If the click was on the list, the button, or something that is in this element, don&#39;t do anything.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> ($(e.target).hasClass(<span class="string">'ui-dropdown-list'</span>) || $(e.target).hasClass(<span class="string">'ui-dropdown-toggle'</span>) || $(e.target).parent().hasClass(<span class="string">'ui-dropdown-toggle'</span>)) {
+				<span class="keyword">return</span>;
+			}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Otherwise, hide all lists.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">var</span> dropdowns = $(<span class="string">'.ui-dropdown-list.ui-active'</span>);
+			<span class="keyword">if</span> (dropdowns.length &gt; <span class="number">0</span>) {
+				dropdowns.removeClass(<span class="string">'active'</span>);
+				dropdowns.hide();
+			}
+		});
+	},
+
+	addListenerToPopups: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+		$(<span class="string">'.ui-popup-toggle'</span>).click(<span class="function"><span class="keyword">function</span><span class="params">(event)</span> {</span>
+			event.preventDefault();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Getting the id of the popup content through the href attribute</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			$($(<span class="keyword">this</span>).attr(<span class="string">'href'</span>)).addClass(<span class="string">'ui-active'</span>);
+		});
+		$(<span class="string">'.ui-popup-content .ui-close'</span>).click(<span class="function"><span class="keyword">function</span><span class="params">(event)</span> {</span>
+			event.preventDefault();
+			$(<span class="keyword">this</span>).parents(<span class="string">'.ui-popup-content'</span>).removeClass(<span class="string">'ui-active'</span>);
+		});
+	},
+
+	initializeGrid: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>Find all elements that have a class that starts with <code>ui-column-</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		$(<span class="string">"[class*='ui-column-']"</span>).each(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+			<span class="keyword">var</span> percent = $(<span class="keyword">this</span>).attr(<span class="string">"class"</span>).match(<span class="regexp">/\d+/g</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Set the width of that element to whatever the digit was in that class name.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			$(<span class="keyword">this</span>).css(<span class="string">"width"</span>, percent + <span class="string">"%"</span>);
+		});
+	},
+
+	infiniteScroll: <span class="function"><span class="keyword">function</span><span class="params">(callback)</span> {</span>
+		$(window).scroll(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>If we are at the bottom of the page..</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			 <span class="keyword">if</span>($(window).scrollTop() + $(window).height() == $(document).height()) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>Do whatever.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		 		callback();
+			 }
+		});
+	},
+
+	hoverviews: {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>Necessary because there is no &quot;parent of element&quot; selector in CSS.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		centerAllObjects: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+			<span class="keyword">var</span> containers = $(<span class="string">'.ui-hover-view'</span>).parent();
+			containers.css(<span class="string">'text-align'</span>, <span class="string">'center'</span>);
+		},</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <p>Relies on hoverviews having a <code>data-index</code> attribute</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		filterByString: <span class="function"><span class="keyword">function</span><span class="params">(filter, containerClass)</span> {</span>
+			containerClass = <span class="keyword">typeof</span> containerClass !== <span class="string">'undefined'</span> ? containerClass : <span class="string">".objects"</span>;
+			<span class="keyword">var</span> container = $(containerClass);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>First, show all hoverviews.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			container.find(<span class="string">".ui-hover-view"</span>).show();
+			<span class="keyword">if</span> (filter.length &gt; <span class="number">0</span>) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <p>Then, find all elements whose <code>data-index</code> attribute does not contain the filter string.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>				<span class="keyword">var</span> unwantedObjects = container.find(<span class="string">".ui-hover-view:not([data-index*='"</span> + filter + <span class="string">"'])"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <p>Finally, hide them.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>				unwantedObjects.hide();
+			}
+		},
+
+		filterByClasses: <span class="function"><span class="keyword">function</span><span class="params">(classNames, containerClass)</span> {</span>
+			containerClass = <span class="keyword">typeof</span> containerClass !== <span class="string">'undefined'</span> ? containerClass : <span class="string">".objects"</span>;
+			<span class="keyword">var</span> container = $(containerClass);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <p>Turn <code>classNames</code> array into a css-selector string</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">var</span> filter = <span class="string">""</span>;
+			<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; classNames.length; i++) {
+				filter += (i + <span class="number">1</span> == classNames.length) ? classNames[i] : classNames[i] + <span class="string">", "</span>;
+			}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <p>First, show all hoverviews.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			container.find(<span class="string">".ui-hover-view"</span>).show();
+			<span class="keyword">if</span> (filter.length &gt; <span class="number">0</span>) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>Then, find all elements that are not those classes.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>				<span class="keyword">var</span> unwantedObjects = container.find(<span class="string">".ui-hover-view:not("</span> + filter + <span class="string">")"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <p>Finally, hide them.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>				unwantedObjects.hide();
+			}
+		},
+
+		add: <span class="function"><span class="keyword">function</span><span class="params">(objects, containerClass)</span> {</span>
+			containerClass = <span class="keyword">typeof</span> containerClass !== <span class="string">'undefined'</span> ? containerClass : <span class="string">".objects"</span>;
+			<span class="keyword">var</span> container = $(containerClass);
+			<span class="keyword">var</span> currentObjects = container.find(<span class="string">'.ui-hover-view'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <p>Add the content after the last hover view in the container.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			container.find(<span class="string">".ui-hover-view:nth-child("</span> + currentObjects.length + <span class="string">")"</span>).after(objects);
+		}
+	},
+
+	ajax: {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <p>Requests content from the ItemsController in the Ajax module.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		items: <span class="function"><span class="keyword">function</span><span class="params">(attributes, amount, sortBy, imageWidth, containerClass)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
+              </div>
+              <p>Keeping this in here because it&#39;s helpful when debugging.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			console.log(<span class="string">'isLoading:'</span> + app.settings.isLoading);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-27">&#182;</a>
+              </div>
+              <p>If we&#39;re still waiting for a response from another requst,
+don&#39;t send another one.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (!app.settings.isLoading) {
+				app.settings.isLoading = <span class="literal">true</span>;
+				amount = <span class="keyword">typeof</span> amount !== <span class="string">'undefined'</span> ? amount : <span class="number">20</span>;
+				attributes = <span class="keyword">typeof</span> attributes !== <span class="string">'undefined'</span> ? attributes : {};
+				sortBy = <span class="keyword">typeof</span> sortBy !== <span class="string">'undefined'</span> ? sortBy : <span class="string">"none"</span>;
+				containerClass = <span class="keyword">typeof</span> containerClass !== <span class="string">'undefined'</span> ? containerClass : <span class="string">".objects"</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-28">&#182;</a>
+              </div>
+              <p>Find the width of all of the other hoverviews in the container class.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>				imageWidth = <span class="keyword">typeof</span> imageWidth !== <span class="string">'undefined'</span> ? imageWidth : $(<span class="string">'.ui-hover-view .ui-hover-img img'</span>, containerClass).width();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-29">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-29">&#182;</a>
+              </div>
+              <p>If we didn&#39;t specify a sortBy parameter and the url has one..</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>				<span class="keyword">if</span> (sortBy == <span class="string">"none"</span> &amp;&amp; document.URL.match(<span class="regexp">/trending|best|new/i</span>)) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-30">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-30">&#182;</a>
+              </div>
+              <p>Set <code>sortBy</code> to whatever is in the url.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>					sortBy = document.URL.match(<span class="regexp">/trending|best|new/i</span>)[<span class="number">0</span>];
+				}
+				<span class="keyword">var</span> itemsOnPage = $(<span class="string">".ui-hover-view"</span>, containerClass).length;
+
+				$.ajax({</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-31">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-31">&#182;</a>
+              </div>
+              <p><code>decodeURIComponent</code> is necessary because we may have array-type parameters,
+which jquery doesn&#39;t know how to parse correctly.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>					data: decodeURIComponent($.param({
+						itemsOnPage: itemsOnPage,
+						attributes: attributes,
+						amount: amount,
+						width: imageWidth,
+						sortby: sortBy
+					})),
+					url: <span class="string">"/ajax/items"</span>,
+					dataType: <span class="string">'html'</span>,
+					success: <span class="function"><span class="keyword">function</span><span class="params">(data)</span> {</span>
+						app.hoverviews.add(data, containerClass);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
+              <p>New content has been loaded, so set all of our listeners again.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>						app.init();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-33">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-33">&#182;</a>
+              </div>
+              <p>We&#39;re done loading everything.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>						app.settings.isLoading = <span class="literal">false</span>;
+					}
+				});
+			}
+		},
+
+		toggleFavorite: <span class="function"><span class="keyword">function</span><span class="params">(id, type)</span> {</span>
+			$.ajax({
+				dataType: <span class="string">"json"</span>,
+				data: {id: id, type: type},
+				type: <span class="string">"post"</span>,
+				url: <span class="string">"/items/favorites/toggle"</span>,
+				success: <span class="function"><span class="keyword">function</span><span class="params">(data)</span> {</span>
+					<span class="keyword">if</span> (data.success) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-34">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-34">&#182;</a>
+              </div>
+              <p>Finds the <code>favorite-icon</code> with the given id.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>						<span class="keyword">var</span> icon = $(<span class="string">'*[data-id="'</span> + id + <span class="string">'"].favorite-icon'</span>);
+						<span class="keyword">var</span> count = $(<span class="string">'*[data-id="'</span> + id + <span class="string">'"].favorite-icon + .count'</span>);
+
+						<span class="keyword">if</span> (data.action == <span class="string">"deleted"</span>) {
+							icon.removeClass(<span class="string">'ui-red'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-35">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-35">&#182;</a>
+              </div>
+              <p>Increment/decrement the amount of favorites</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>							count.text((Number(count.text()) - <span class="number">1</span>).toString());
+						} <span class="keyword">else</span> {
+							icon.addClass(<span class="string">'ui-red'</span>);
+							count.text((Number(count.text()) + <span class="number">1</span>).toString());
+						}
+					} <span class="keyword">else</span> <span class="keyword">if</span> (data.code == <span class="string">'0'</span>) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-36">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-36">&#182;</a>
+              </div>
+              <p>We need to log in.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>						window.location = <span class="string">"/user/registration"</span>;
+					} <span class="keyword">else</span> {
+						alert(<span class="string">"Error "</span> + data.code + <span class="string">": "</span> + data.message);
+					}
+				}
+			});
+		},
+
+		toggleClosetItem: <span class="function"><span class="keyword">function</span><span class="params">(id, amount)</span> {</span>
+			amount = <span class="keyword">typeof</span> amount !== <span class="string">'undefined'</span> ? amount : <span class="number">1</span>;
+			$.ajax({
+				dataType: <span class="string">"json"</span>,
+				data: {id: id, amount: amount},
+				type: <span class="string">"post"</span>,
+				url: <span class="string">"/closets/default/toggle"</span>,
+				success: <span class="function"><span class="keyword">function</span><span class="params">(data)</span> {</span>
+					<span class="keyword">if</span> (data.success) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-37">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-37">&#182;</a>
+              </div>
+              <p>Finds the <code>closet-icon</code> with the given id.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>						<span class="keyword">var</span> icon = $(<span class="string">'*[data-id="'</span> + id + <span class="string">'"].closet-icon'</span>);
+						<span class="keyword">var</span> count = $(<span class="string">'*[data-id="'</span> + id + <span class="string">'"].closet-icon + .count'</span>);
+
+						<span class="keyword">if</span> (data.action == <span class="string">"deleted"</span>) {
+							icon.text(<span class="string">'plus'</span>);
+							icon.removeClass(<span class="string">'ui-green'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-38">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-38">&#182;</a>
+              </div>
+              <p>Increment/decrement the amount of owners</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>							count.text((Number(count.text()) - <span class="number">1</span>).toString());
+						} <span class="keyword">else</span> {
+							icon.text(<span class="string">'check'</span>);
+							icon.addClass(<span class="string">'ui-green'</span>);
+							count.text((Number(count.text()) + <span class="number">1</span>).toString());
+						}
+					} <span class="keyword">else</span> <span class="keyword">if</span> (data.code == <span class="string">'0'</span>) {
+						window.location = <span class="string">"/user/registration"</span>;
+					} <span class="keyword">else</span> {
+						alert(<span class="string">"Error "</span> + data.code + <span class="string">": "</span> + data.message);
+					}
+				}
+			});
+		}
+	},</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-39">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-39">&#182;</a>
+              </div>
+              <p>Resize, center, and initialize things. Apply all of our event listeners.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	init: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+		<span class="keyword">this</span>.initializeGrid();
+		<span class="keyword">this</span>.hoverviews.centerAllObjects();
+		<span class="keyword">this</span>.resizeOptionBars();
+		<span class="keyword">this</span>.addListenerToAlertClose();
+		<span class="keyword">this</span>.addListenerToDropdowns();
+		<span class="keyword">this</span>.addListenerToPopups();
+		<span class="keyword">this</span>.addListenerToHoverTools();
+		<span class="keyword">this</span>.addListenerToSearchBar();
+	}
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-40">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-40">&#182;</a>
+              </div>
+              <p>This gets run on every page load.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>$(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span> app.init(); });</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
