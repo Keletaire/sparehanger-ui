@@ -8,12 +8,16 @@
 	border-radius: 3px;
 	border-bottom: 3px solid $very-dark-blue;
 
+	// This may look familiar - it's used in the definitions of `ui-row` as well.
+	// We use it here because navbars use column-like sections inside of them.
 	&:before,
 	&:after {
 		display: table;
 		content: " ";
 	}
 
+	// When this class is applied, the navbar is "fixed" to the top
+	// of the page and scrolls with the content.
 	&.ui-fixed {
 		position: fixed;
 		top: 0px;
@@ -23,6 +27,7 @@
 		margin: 0;
 		border-radius: 0;
 		opacity: 0.98;
+		// We want the navbar to be above pretty much anything.
 		z-index: 10000;
 	}
 
@@ -57,6 +62,8 @@
 		}
 	}
 
+	// We override a lot of styles in `_forms.scss` here becaus we want the
+	// search bar to be transparent.
 	.ui-navbar-search {
 		background: rgba(0, 0, 0, 0);
 		outline: none !important;
@@ -80,10 +87,13 @@
 			a {
 				display: inline-block;
 				vertical-align: middle;
+				// This style declaration gets in the way of the styles defined in `_dropdowns.scss`
+				// But we want to make sure that the links on the navbar iself are light grey.
 				color: $light-grey;
 			}
 		}
 
+		// An attempt at correcting the weird conflicts
 		.ui-dropdown-list a {
 			color: $dark-blue !important;
 

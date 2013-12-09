@@ -1,7 +1,9 @@
-.ui-row { 
+// A row defines a single horizontal section of the site.
+.ui-row {
 	display: block;
 	margin: 30px 0;
 
+	// It uses a number of tricks to ensure that rows are always placed ontop of one another.
 	&:before,
 	&:after {
 		display: table;
@@ -13,10 +15,13 @@
 	}
 }
 
+// A column is a verical section of a row.
+// Its width - specified in the class itself - is actually applied to it using javascript.
 [class*='ui-column-'] {
 	display: inline-block;
 	float: left;
 
+	// When the screen size is phone or small-tablet sized, all columns stack.
 	@media screen and (max-width: 640px){
 		display: block;
 		float: none;
@@ -25,7 +30,11 @@
 	}
 }
 
-.ui-center { margin: 0 auto; }
+// Some utility classes to help with special cases.
+.ui-center {
+	margin: 0 auto;
+	text-align: center;
+}
 .ui-pull-right { float: right; }
 .ui-inline { display: inline; }
 

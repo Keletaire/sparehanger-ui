@@ -1,13 +1,16 @@
+// Anything with the `tooltip` attribute.
 [tooltip] {
 	display: inline;
 	position: relative;
 
+	// This styles the right side of the tooltip
 	&:hover:after{
 		background: $dark-blue;
 		opacity: 0.8;
 		border-radius: 3px;
 		bottom: 26px;
 		color: #fff;
+		// Use CSS3 to get the `tooltip` attribute's content and use it as the content
 		content: attr(tooltip);
 		left: 10%;
 		padding: 5px 15px;
@@ -16,7 +19,8 @@
 		font-size: 0.8rem;
 		text-align: center;
 	}
-	
+
+	// This styles the left side of the tooltip
 	&:hover:before{
 		border: solid;
 		opacity: 0.8;

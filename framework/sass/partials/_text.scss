@@ -1,3 +1,4 @@
+// The default settings for all text.
 html {
 	color: $base;
 	font: 100%/1.4 "Proxima Nova", "Lato", sans-serif;
@@ -20,6 +21,7 @@ a {
 	}
 }
 
+// All "normal" `ul` elements - those without special classes.
 ul:not([class]) {
 	margin-left: 30px;
 }
@@ -49,6 +51,8 @@ h4 {
 	line-height: 1.7;
 }
 
+// text icons like to be vertically aligned at the baseline, like all other text.
+// We want them in the middle of the line.
 .ss-icon { vertical-align: middle; }
 .ui-red   { color: $red !important;}
 .ui-green { color: $green !important; }

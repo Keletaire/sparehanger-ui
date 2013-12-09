@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>_hover-views.scss</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="_album-uploader.html">
+                _album-uploader.scss
+              </a>
+            
+              
+              <a class="source" href="_alerts.html">
+                _alerts.scss
+              </a>
+            
+              
+              <a class="source" href="_boxes.html">
+                _boxes.scss
+              </a>
+            
+              
+              <a class="source" href="_buttons.html">
+                _buttons.scss
+              </a>
+            
+              
+              <a class="source" href="_dropdowns.html">
+                _dropdowns.scss
+              </a>
+            
+              
+              <a class="source" href="_forms.html">
+                _forms.scss
+              </a>
+            
+              
+              <a class="source" href="_grid.html">
+                _grid.scss
+              </a>
+            
+              
+              <a class="source" href="_hover-views.html">
+                _hover-views.scss
+              </a>
+            
+              
+              <a class="source" href="_navbar.html">
+                _navbar.scss
+              </a>
+            
+              
+              <a class="source" href="_option-bars.html">
+                _option-bars.scss
+              </a>
+            
+              
+              <a class="source" href="_page-title.html">
+                _page-title.scss
+              </a>
+            
+              
+              <a class="source" href="_pills.html">
+                _pills.scss
+              </a>
+            
+              
+              <a class="source" href="_popup.html">
+                _popup.scss
+              </a>
+            
+              
+              <a class="source" href="_text.html">
+                _text.scss
+              </a>
+            
+              
+              <a class="source" href="_tooltips.html">
+                _tooltips.scss
+              </a>
+            
+              
+              <a class="source" href="sparehanger.html">
+                sparehanger.scss
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>_hover-views.scss</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>The hoverview is an inline block because we want it to act like
+a peice of text, but have block-like attributes.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="class">.ui-hover-view</span> {
+	<span class="attribute">display</span><span class="value">: inline-block;</span>
+	<span class="attribute">margin</span><span class="value">: <span class="number">10</span>px;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>When a user hovers over the hoverview, both the content and the tools become visible.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	&amp;<span class="pseudo">:hover</span> &gt; <span class="class">.ui-hover-content</span> {
+		<span class="attribute">opacity</span><span class="value">: <span class="number">1</span>;</span>
+	}
+
+	&amp;<span class="pseudo">:hover</span> &gt; <span class="class">.ui-hover-tools</span> {
+		<span class="attribute">opacity</span><span class="value">: <span class="number">1</span>;</span>
+	}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>However, the image itself is always visible.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	<span class="class">.ui-hover-img</span> {
+		<span class="attribute">opacity</span><span class="value">: <span class="number">1</span>;</span>
+		-webkit-<span class="attribute">transition</span><span class="value">: opacity .<span class="number">05</span>s linear;</span>
+	}
+
+	<span class="class">.ui-hover-content</span> {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Placing the content directly over the image</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		<span class="attribute">position</span><span class="value">: absolute;</span>
+		<span class="attribute">top</span><span class="value">: <span class="number">0</span>;</span>
+		<span class="attribute">bottom</span><span class="value">: <span class="number">0</span>;</span>
+		<span class="attribute">left</span><span class="value">: <span class="number">0</span>;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Making sure that the content goes over the view.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		<span class="attribute">z-index</span><span class="value">: <span class="number">3</span>;</span>
+		<span class="attribute">overflow</span><span class="value">: hidden;</span>
+		<span class="attribute">margin</span><span class="value">: <span class="number">0</span>;</span>
+		<span class="attribute">padding</span><span class="value">: <span class="number">20</span>px;</span>
+		<span class="attribute">width</span><span class="value">: <span class="number">100</span>%;</span>
+		<span class="attribute">background</span><span class="value">: rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.96</span>);</span>
+		<span class="attribute">color</span><span class="value">: <span class="hexcolor">#222</span>;</span>
+		<span class="attribute">text-decoration</span><span class="value">: none;</span>
+		<span class="attribute">font-size</span><span class="value">: <span class="number">1</span>rem;</span>
+		<span class="attribute">line-height</span><span class="value">: <span class="number">1.2</span>;</span>
+		<span class="attribute">opacity</span><span class="value">: <span class="number">0</span>;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>The fading animation</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		-webkit-<span class="attribute">transition</span><span class="value">: opacity .<span class="number">1</span>s linear;</span>
+
+		<span class="tag">h4</span> {
+			<span class="attribute">line-height</span><span class="value">: <span class="number">1.1</span>rem;</span>
+		}
+	}
+
+	<span class="class">.ui-hover-tools</span> {
+		<span class="attribute">position</span><span class="value">: absolute;</span>
+		<span class="attribute">bottom</span><span class="value">: <span class="number">0</span>;</span>
+		<span class="attribute">left</span><span class="value">: <span class="number">0</span>;</span>
+		<span class="attribute">z-index</span><span class="value">: <span class="number">3</span>;</span>
+		<span class="attribute">overflow</span><span class="value">: hidden;</span>
+		<span class="attribute">margin</span><span class="value">: <span class="number">0</span>;</span>
+		<span class="attribute">padding</span><span class="value">: <span class="number">5</span>px <span class="number">10</span>px;</span>
+		<span class="attribute">width</span><span class="value">: <span class="number">100</span>%;</span>
+		<span class="attribute">color</span><span class="value">: <span class="hexcolor">#222</span>;</span>
+		<span class="attribute">text-decoration</span><span class="value">: none;</span>
+		<span class="attribute">text-align</span><span class="value">: left;</span>
+		<span class="attribute">font-size</span><span class="value">: <span class="number">1</span>rem;</span>
+		<span class="attribute">opacity</span><span class="value">: <span class="number">0</span>;</span>
+		-webkit-<span class="attribute">transition</span><span class="value">: opacity .<span class="number">1</span>s linear;</span>
+
+		<span class="tag">a</span> { <span class="attribute">color</span><span class="value">: <span class="hexcolor">#333</span> };</span>
+	}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>The counter for how many people like and own the object</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	<span class="class">.ui-count</span> {
+		<span class="attribute">margin-left</span><span class="value">: <span class="number">2</span>px;</span>
+		<span class="attribute">color</span><span class="value">: <span class="hexcolor">#555</span>;</span>
+		<span class="attribute">font-size</span><span class="value">: .<span class="number">75</span>rem;</span>
+	}
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

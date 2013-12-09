@@ -1,12 +1,16 @@
 .ui-popup-content {
+	// By default, the popup's content is completely hidden.
 	display: none;
 	opacity: 0;
+	// This transition never actually gets seen because of the display property
 	-webkit-transition: opacity .4s linear;
 
 	&.ui-active {
+		// Show a little skin behind the content
 		opacity:    0.98;
 		background: $dark-blue;
 		color: #FFF;
+		// Completely cover everything on the page
 		width:      100%;
 		height:     100%;
 		z-index:    100000;
@@ -14,12 +18,14 @@
 		left:       0;
 		position:   fixed;
 		display: inherit;
+		// Where we specify how much padding there is to the sides of the screen.
 		padding: 10% 20%;
 
 		a {
 			color: #FFF;
 		}
 
+		// Used for adjusting the images and descriptions for items
 		.item-image, .item-info {
 			padding: 10px;
 		}

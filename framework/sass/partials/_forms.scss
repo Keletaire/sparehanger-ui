@@ -7,11 +7,13 @@
 		margin-bottom: 5px;
 	}
 
+	// All labels inside of other labels - for instance in the case of checkboxes
 	label+label {
 		font-weight: normal;
 	}
 }
 
+// Any text-input
 input[type='text'] {
 	box-sizing: border-box;
 	padding: 4px 6px;
@@ -53,6 +55,7 @@ select {
 	font-family: inherit;
 	font-size: 1rem;
 	min-width: 250px;
+	// Hacks to get rid of the "down arrow" that firefox and chrome put into select boxes.
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	text-indent: 0.01px;

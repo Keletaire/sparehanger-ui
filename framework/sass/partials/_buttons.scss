@@ -1,3 +1,5 @@
+// The default button is an inline block because we want it to act like
+// a peice of text, but have block-like attributes.
 .ui-button {
 	display: inline-block;
 	padding: 7px 15px;
@@ -14,6 +16,7 @@
 	cursor: pointer;
 	font-family: inherit;
 	font-weight: normal;
+	// Necessary for wekbit
 	-webkit-appearance: none;
 
 	&:hover {
@@ -78,6 +81,7 @@
 	}
 }
 
+// Actual `button` elements aquire these same styles.
 button {
 	@extend .ui-button;
 	font-size: 1rem;

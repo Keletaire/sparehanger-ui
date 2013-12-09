@@ -1,4 +1,4 @@
-// Colors
+// These are the base colors for the Spare Hanger brand.
 $base:            #333;
 $blue:            #2980B9;
 $dark-blue:       #34495E;
@@ -15,6 +15,7 @@ $very-light-grey: lighten($light-grey, 5%);
 
 $filter-color-key: #C69;
 
+// All sparehanger-ui classes are namespaced under the `ui-` class.
 [class*='ui-'] {
 	position: relative;
 	-webkit-box-sizing: border-box;
@@ -28,9 +29,11 @@ $filter-color-key: #C69;
 	margin: 100px auto;
 	padding: 0 26px;
 	padding: 0 1.4rem;
+	// Here, we set the width of the entire site.
 	max-width: 960px;
 }
 
+// We keep each components of the framwork seperate, then combine them upon compile.
 @import
 	"partials/grid",
 	"partials/text",

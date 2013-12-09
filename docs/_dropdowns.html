@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>_dropdowns.scss</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="_album-uploader.html">
+                _album-uploader.scss
+              </a>
+            
+              
+              <a class="source" href="_alerts.html">
+                _alerts.scss
+              </a>
+            
+              
+              <a class="source" href="_boxes.html">
+                _boxes.scss
+              </a>
+            
+              
+              <a class="source" href="_buttons.html">
+                _buttons.scss
+              </a>
+            
+              
+              <a class="source" href="_dropdowns.html">
+                _dropdowns.scss
+              </a>
+            
+              
+              <a class="source" href="_forms.html">
+                _forms.scss
+              </a>
+            
+              
+              <a class="source" href="_grid.html">
+                _grid.scss
+              </a>
+            
+              
+              <a class="source" href="_hover-views.html">
+                _hover-views.scss
+              </a>
+            
+              
+              <a class="source" href="_navbar.html">
+                _navbar.scss
+              </a>
+            
+              
+              <a class="source" href="_option-bars.html">
+                _option-bars.scss
+              </a>
+            
+              
+              <a class="source" href="_page-title.html">
+                _page-title.scss
+              </a>
+            
+              
+              <a class="source" href="_pills.html">
+                _pills.scss
+              </a>
+            
+              
+              <a class="source" href="_popup.html">
+                _popup.scss
+              </a>
+            
+              
+              <a class="source" href="_text.html">
+                _text.scss
+              </a>
+            
+              
+              <a class="source" href="_tooltips.html">
+                _tooltips.scss
+              </a>
+            
+              
+              <a class="source" href="sparehanger.html">
+                sparehanger.scss
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>_dropdowns.scss</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="class">.ui-dropdown</span> <span class="class">.ui-dropdown-list</span> {
+	<span class="attribute">position</span><span class="value">: absolute;</span>
+	<span class="attribute">top</span><span class="value">: <span class="number">100</span>%;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Dropdowns go over everything else</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	<span class="attribute">z-index</span><span class="value">: <span class="number">1000</span>;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Hide the dropdown options by default</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>	<span class="attribute">display</span><span class="value">: none;</span>
+	<span class="attribute">padding</span><span class="value">: <span class="number">9</span>px <span class="number">0</span>;</span>
+	<span class="attribute">min-width</span><span class="value">: <span class="number">160</span>px;</span>
+	<span class="attribute">border</span><span class="value">: <span class="number">1</span>px solid rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.15</span>);</span>
+	<span class="attribute">border-radius</span><span class="value">: <span class="number">3</span>px;</span>
+	<span class="attribute">background</span><span class="value">: <span class="hexcolor">#FFF</span>;</span>
+	-webkit-<span class="attribute">box-shadow</span><span class="value">: <span class="number">0</span> <span class="number">6</span>px <span class="number">12</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.175</span>);</span>
+	<span class="attribute">box-shadow</span><span class="value">: <span class="number">0</span> <span class="number">6</span>px <span class="number">12</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.175</span>);</span>
+	<span class="attribute">list-style</span><span class="value">: none;</span>
+
+	<span class="tag">li</span>  {
+		<span class="attribute">border-top</span><span class="value">: <span class="number">1</span>px solid <span class="hexcolor">#eee</span>;</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>This can get very tricky.
+We want the colors of the dropdown options to invert when we hover over them.
+However, the link styling of whatever the dropdown is used in can override this.
+Therefore, we apply the <code>!important</code> flag to make sure it is chosen.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>		&amp;<span class="pseudo">:hover</span> {
+			<span class="attribute">background</span><span class="value">: $dark-blue;</span>
+			<span class="attribute">color</span><span class="value">: <span class="hexcolor">#FFF</span> <span class="important">!important</span>;</span>
+		}
+
+		&amp;<span class="pseudo">:first-child</span> {
+			<span class="attribute">border-top</span><span class="value">: <span class="number">0</span>;</span>
+		}
+
+		<span class="tag">a</span> {
+			<span class="attribute">display</span><span class="value">: block;</span>
+			<span class="attribute">padding</span><span class="value">: <span class="number">3</span>px <span class="number">20</span>px;</span>
+			<span class="attribute">color</span><span class="value">: $dark-blue;</span>
+
+			&amp;<span class="pseudo">:hover</span> {
+				<span class="attribute">color</span><span class="value">: <span class="hexcolor">#FFF</span> <span class="important">!important</span>;</span>
+			}
+		}
+	}
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

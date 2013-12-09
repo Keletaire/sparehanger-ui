@@ -1,7 +1,10 @@
+// The hoverview is an inline block because we want it to act like
+// a peice of text, but have block-like attributes.
 .ui-hover-view {
 	display: inline-block;
 	margin: 10px;
 
+	// When a user hovers over the hoverview, both the content and the tools become visible.
 	&:hover > .ui-hover-content {
 		opacity: 1;
 	}
@@ -10,16 +13,19 @@
 		opacity: 1;
 	}
 
+	// However, the image itself is always visible.
 	.ui-hover-img {
 		opacity: 1;
 		-webkit-transition: opacity .05s linear;
 	}
 
 	.ui-hover-content {
+		// Placing the content directly over the image
 		position: absolute;
 		top: 0;
 		bottom: 0;
 		left: 0;
+		// Making sure that the content goes over the view.
 		z-index: 3;
 		overflow: hidden;
 		margin: 0;
@@ -31,6 +37,7 @@
 		font-size: 1rem;
 		line-height: 1.2;
 		opacity: 0;
+		// The fading animation
 		-webkit-transition: opacity .1s linear;
 
 		h4 {
@@ -57,6 +64,7 @@
 		a { color: #333 };
 	}
 
+	// The counter for how many people like and own the object
 	.ui-count {
 		margin-left: 2px;
 		color: #555;

@@ -1,7 +1,9 @@
 .ui-dropdown .ui-dropdown-list {
 	position: absolute;
 	top: 100%;
+	// Dropdowns go over everything else
 	z-index: 1000;
+	// Hide the dropdown options by default
 	display: none;
 	padding: 9px 0;
 	min-width: 160px;
@@ -15,6 +17,10 @@
 	li  {
 		border-top: 1px solid #eee;
 
+		// This can get very tricky.
+		// We want the colors of the dropdown options to invert when we hover over them.
+		// However, the link styling of whatever the dropdown is used in can override this.
+		// Therefore, we apply the `!important` flag to make sure it is chosen.
 		&:hover {
 			background: $dark-blue;
 			color: #FFF !important;
