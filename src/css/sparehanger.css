@@ -1,4 +1,4 @@
-[class*='ui-'] {
+[class*='ui-lol'] {
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -32,7 +32,8 @@
       margin: 10px 0 !important; } }
 
 .ui-center {
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
 
 .ui-pull-right {
   float: right; }
@@ -488,7 +489,11 @@ textarea {
     left: 0;
     position: fixed;
     display: inherit;
-    padding: 20% 30%; }
+    padding: 10% 20%; }
+    .ui-popup-content.ui-active a {
+      color: #FFF; }
+    .ui-popup-content.ui-active .item-image, .ui-popup-content.ui-active .item-info {
+      padding: 10px; }
   .ui-popup-content h2 {
     margin-top: 10px; }
 
