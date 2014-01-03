@@ -2,12 +2,14 @@
 	display: inline-block;
 	margin: 10px;
 
-	&:hover > .ui-hover-content {
-		opacity: 1;
-	}
+	@media screen and (min-width: 800px) {
+		&:hover > .ui-hover-content {
+			opacity: 1;
+		}
 
-	&:hover > .ui-hover-tools {
-		opacity: 1;
+		&:hover > .ui-hover-tools {
+			opacity: 1;
+		}
 	}
 
 	.ui-hover-img {
