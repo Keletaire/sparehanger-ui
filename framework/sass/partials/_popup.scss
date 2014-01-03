@@ -1,6 +1,7 @@
 .ui-popup-content {
 	display: none;
 	opacity: 0;
+	overflow: scroll;
 	-webkit-transition: opacity .4s linear;
 
 	&.ui-active {
