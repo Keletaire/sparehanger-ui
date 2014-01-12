@@ -36,7 +36,7 @@ app = {
 		var favoriteIcons = $('.favorite-icon');
 		var closetIcons = $('.closet-icon');
 
-        favoriteIcons.unbind('click');
+				favoriteIcons.unbind('click');
 		favoriteIcons.click(function(event) {
 			event.preventDefault();
 			app.ajax.toggleFavorite($(this).data("id"), $(this).data("type"));
@@ -85,10 +85,10 @@ app = {
 			$($(this).attr('href')).addClass('ui-active');
 		});
 		$('.ui-popup-content').click(function(event) {
-            		// if the target's class name is the background, close
-            		if (event.target.className === "ui-popup-content ui-active") {
-                		$(this).removeClass('ui-active');
-            		}
+			// if the target's class name is the background, close
+			if (event.target.className === "ui-popup-content ui-active") {
+				$(this).removeClass('ui-active');
+			}
 		});
 	},
 
@@ -105,8 +105,8 @@ app = {
 		$(window).scroll(function() {
 			// If we are at the bottom of the page..
 			 if($(window).scrollTop() + $(window).height() == $(document).height()) {
-			 	// Do whatever.
-		 		callback();
+				// Do whatever.
+				callback();
 			 }
 		});
 	},
@@ -261,12 +261,12 @@ app = {
 
 						if (data.action == "deleted") {
 							icon.removeClass('ui-red');
-                            console.log('Favorite removed.');
+														console.log('Favorite removed.');
 							// Increment/decrement the amount of favorites
 							count.text((Number(count.text()) - 1).toString());
 						} else {
 							icon.addClass('ui-red')
-                            console.log('Favorite added.');
+														console.log('Favorite added.');
 							count.text((Number(count.text()) + 1).toString());
 						}
 					} else if (data.code == '0') {

@@ -570,7 +570,7 @@ $(function() {
 	app.hoverviews.add($(&quot;&lt;div class='hover-view'&gt;...&lt;/div&gt;&quot;), containerClass);
 
 	// Make an ajax call to add a number of items to the page
-	app.hoverviews.ajax.getItems(amount, {category_one_id: 2}, imageWidth, sortingType, containerClass);
+	app.ajax.items(amount, {category_one_id: 2}, imageWidth, sortingType, containerClass);
 });
 					</code></pre>
 				</div>
@@ -593,17 +593,17 @@ $(function() {
 	'options' =&gt; array(
 		'Brands Followed' =&gt; array(
 			'url'   =&gt; Yii::app()-&gt;createAbsoluteUrl('/brands/following'),
-			'class' =&gt; 'button',
+			'class' =&gt; 'ui-button',
 			'icon'  =&gt; 'eye',
 		),
 		'Manage Brands' =&gt; array(
 			'url'   =&gt; Yii::app()-&gt;createAbsoluteUrl('/brands/manage'),
-			'class' =&gt; 'button',
+			'class' =&gt; 'ui-button',
 			'icon'  =&gt; 'key',
 		),
 		'Create Brand' =&gt; array(
 			'url'   =&gt; Yii::app()-&gt;createAbsoluteUrl('/brands/create'),
-			'class' =&gt; 'primary button',
+			'class' =&gt; 'ui-primary ui-button',
 			'icon'  =&gt; 'plus',
 		),
 		// and so on...
@@ -627,6 +627,7 @@ $(function() {
 				<div class="ui-column-100">
 					<div class="ui-page-title">
 						<h1>Dropdowns</h1>
+						<p>(Work-In-Progress)</p>
 					</div>
 					<div class="ui-dropdown">
 						<a class="ui-dropdown-toggle ui-button">Privacy <i class="ss-icon" style="font-size: .8rem"> dropdown</i></a>
@@ -737,7 +738,7 @@ $(function() {
 			</div>
 		</div>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script src="src/javascript/sparehanger.js"></script>
+		<script src="src/js/sparehanger.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"></script>
 		<script>
 			$(function() {
